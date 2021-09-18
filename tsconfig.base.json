@@ -18,7 +18,8 @@
       "@atlascode/frontend-components": [
         "libs/frontend-components/src/index.ts"
       ],
-      "@atlascode/frontend-pages": ["libs/frontend-pages/src/index.ts"]
+      "@atlascode/frontend-pages": ["libs/frontend-pages/src/index.ts"],
+      "@atlascode/frontend-sections": ["libs/frontend-sections/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

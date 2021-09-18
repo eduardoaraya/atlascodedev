@@ -35,6 +35,9 @@
     },
     "frontend-pages": {
       "tags": []
+    },
+    "frontend-sections": {
+      "tags": []
     }
   }
 }
