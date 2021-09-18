@@ -29,6 +29,9 @@
   "projects": {
     "frontend": {
       "tags": []
+    },
+    "frontend-components": {
+      "tags": []
     }
   }
 }

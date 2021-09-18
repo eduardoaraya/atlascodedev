@@ -52,6 +52,30 @@
           }
         }
       }
+    },
+    "frontend-components": {
+      "root": "libs/frontend-components",
+      "sourceRoot": "libs/frontend-components/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": [
+              "libs/frontend-components/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/frontend-components"],
+          "options": {
+            "jestConfig": "libs/frontend-components/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
@@ -61,17 +85,22 @@
     "@nrwl/react": {
       "application": {
         "babel": true
-      
       },
       "library": {
         "style": "none",
         "pascalCaseFiles": true,
-        
         "publishable": false,
         "component": false,
         "buildable": false,
         "importPath": "@atlascode/frontend-"
-      } 
+      },
+      "component": {
+        "style": "none",
+        "export": true,
+        "pascalCaseDirectory": true,
+        "pascalCaseFiles": true,
+        "skipTests": true
+      }
     },
     "@nrwl/next": {
       "application": {
