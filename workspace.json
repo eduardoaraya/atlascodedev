@@ -99,6 +99,28 @@
         }
       }
     },
+    "frontend-jss-mixins": {
+      "root": "libs/frontend-jss-mixins",
+      "sourceRoot": "libs/frontend-jss-mixins/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/frontend-jss-mixins/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/frontend-jss-mixins"],
+          "options": {
+            "jestConfig": "libs/frontend-jss-mixins/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "frontend-pages": {
       "root": "libs/frontend-pages",
       "sourceRoot": "libs/frontend-pages/src",
