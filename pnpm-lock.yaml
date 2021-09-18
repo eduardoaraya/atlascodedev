@@ -7,6 +7,7 @@ specifiers:
   '@nrwl/linter': 12.9.0
   '@nrwl/next': 12.9.0
   '@nrwl/react': 12.9.0
+  '@nrwl/storybook': ^12.9.0
   '@nrwl/tao': 12.9.0
   '@nrwl/web': 12.9.0
   '@nrwl/workspace': 12.9.0
@@ -52,6 +53,7 @@ devDependencies:
   '@nrwl/jest': 12.9.0
   '@nrwl/linter': 12.9.0
   '@nrwl/react': 12.9.0_24ce19a5c69d7f2de2901d46dbd985dc
+  '@nrwl/storybook': 12.9.0_prettier@2.4.1+typescript@4.3.5
   '@nrwl/tao': 12.9.0
   '@nrwl/web': 12.9.0_prettier@2.4.1+typescript@4.3.5
   '@nrwl/workspace': 12.9.0_prettier@2.4.1
@@ -1430,7 +1432,6 @@ packages:
       babel-loader: 8.2.2_@babel+core@7.15.5
     transitivePeerDependencies:
       - supports-color
-    dev: false
 
   /@cypress/webpack-preprocessor/4.1.5_webpack@4.46.0:
     resolution: {integrity: sha512-B4miSaS3VCMVSlfuvbWCjytTywdnquRsF1tQ3quC7TGUzEXnQZ4+o8WUKibjMozrOomALkUdMxqOJ1ib5oFkKw==}
@@ -1963,6 +1964,35 @@ packages:
       - webpack
     dev: false
 
+  /@nrwl/cypress/12.9.0_prettier@2.4.1+typescript@4.3.5:
+    resolution: {integrity: sha512-hiPo8zDCBwAEcedTxH3zmXIlgAObeG3K5S1QeVOrJbrNYscz7l69h9fXKJ8CLmCZcflijgK2/6ZwC85DGhllhg==}
+    peerDependencies:
+      cypress: '>= 3 < 9'
+    dependencies:
+      '@cypress/webpack-preprocessor': 4.1.5
+      '@nrwl/devkit': 12.9.0
+      '@nrwl/linter': 12.9.0
+      '@nrwl/workspace': 12.9.0_prettier@2.4.1
+      chalk: 4.1.0
+      fork-ts-checker-webpack-plugin: 6.2.10
+      rxjs: 6.6.7
+      ts-loader: 5.4.5_typescript@4.3.5
+      tsconfig-paths-webpack-plugin: 3.4.1
+      tslib: 2.3.1
+      webpack-node-externals: 1.7.2
+      yargs-parser: 20.0.0
+    transitivePeerDependencies:
+      - bufferutil
+      - canvas
+      - node-notifier
+      - prettier
+      - supports-color
+      - ts-node
+      - typescript
+      - utf-8-validate
+      - webpack
+    dev: true
+
   /@nrwl/devkit/12.9.0:
     resolution: {integrity: sha512-mobW2XKmQicTdhn0XQStNnYmhMC0Aj7qqX9lS/8IX561PtgocR0MPH9rTWOfNECpwHhj2YwTRTHjQfgv29btxw==}
     dependencies:
@@ -2276,6 +2306,30 @@ packages:
       - utf-8-validate
       - webpack
     dev: false
+
+  /@nrwl/storybook/12.9.0_prettier@2.4.1+typescript@4.3.5:
+    resolution: {integrity: sha512-J6hAfPVh3WK97qvs7vI2xTYx2Afn3hxFkew19Z4HQeJjsKpJ0xVz9OFPVmWnAmL9A3NpYzfIvE7aRwNAKlA8oQ==}
+    dependencies:
+      '@nrwl/cypress': 12.9.0_prettier@2.4.1+typescript@4.3.5
+      '@nrwl/devkit': 12.9.0
+      '@nrwl/linter': 12.9.0
+      '@nrwl/workspace': 12.9.0_prettier@2.4.1
+      core-js: 3.17.3
+      semver: 7.3.4
+      ts-loader: 5.4.5_typescript@4.3.5
+      tsconfig-paths-webpack-plugin: 3.4.1
+    transitivePeerDependencies:
+      - bufferutil
+      - canvas
+      - cypress
+      - node-notifier
+      - prettier
+      - supports-color
+      - ts-node
+      - typescript
+      - utf-8-validate
+      - webpack
+    dev: true
 
   /@nrwl/tao/12.9.0:
     resolution: {integrity: sha512-a97JYoLohhBRthnWAGMh3++8Ri/yvCQUG/INBAYxW6sWAk2owJ6DIEIERP4yhIW29HPdqZ/fA2k9iqU6EgIAew==}
@@ -3741,7 +3795,6 @@ packages:
       loader-utils: 1.4.0
       make-dir: 3.1.0
       schema-utils: 2.7.1
-    dev: false
     optional: true
 
   /babel-plugin-const-enum/1.1.0_@babel+core@7.15.5:
