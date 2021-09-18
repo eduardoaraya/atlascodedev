@@ -6,6 +6,7 @@ specifiers:
   '@nrwl/jest': 12.9.0
   '@nrwl/linter': 12.9.0
   '@nrwl/next': 12.9.0
+  '@nrwl/node': ^12.9.0
   '@nrwl/react': 12.9.0
   '@nrwl/storybook': ^12.9.0
   '@nrwl/tao': 12.9.0
@@ -52,6 +53,7 @@ devDependencies:
   '@nrwl/eslint-plugin-nx': 12.9.0_7a4391eb33f780aaad63f603a59cc4d0
   '@nrwl/jest': 12.9.0
   '@nrwl/linter': 12.9.0
+  '@nrwl/node': 12.9.0_prettier@2.4.1+typescript@4.3.5
   '@nrwl/react': 12.9.0_24ce19a5c69d7f2de2901d46dbd985dc
   '@nrwl/storybook': 12.9.0_prettier@2.4.1+typescript@4.3.5
   '@nrwl/tao': 12.9.0
@@ -2154,6 +2156,43 @@ packages:
       - webpack-hot-middleware
       - webpack-plugin-serve
     dev: false
+
+  /@nrwl/node/12.9.0_prettier@2.4.1+typescript@4.3.5:
+    resolution: {integrity: sha512-AluoSQVMKMCPMvlPZbBxTNlVQTx6/nFOZZMOYCrNLWgWuyfX29jrghCw3WSDAW41B9+ruhxPLxzmER/T58FfuQ==}
+    dependencies:
+      '@nrwl/devkit': 12.9.0
+      '@nrwl/jest': 12.9.0
+      '@nrwl/linter': 12.9.0
+      '@nrwl/workspace': 12.9.0_prettier@2.4.1
+      chalk: 4.1.0
+      circular-dependency-plugin: 5.2.0_webpack@4.46.0
+      copy-webpack-plugin: 6.4.1_webpack@4.46.0
+      fork-ts-checker-webpack-plugin: 6.2.10
+      fs-extra: 9.1.0
+      glob: 7.1.4
+      license-webpack-plugin: 2.3.15
+      rxjs: 6.6.7
+      rxjs-for-await: 0.0.2_rxjs@6.6.7
+      source-map-support: 0.5.19
+      tree-kill: 1.2.2
+      ts-loader: 5.4.5_typescript@4.3.5
+      tsconfig-paths-webpack-plugin: 3.4.1
+      tslib: 2.3.1
+      webpack: 4.46.0
+      webpack-merge: 4.2.1
+      webpack-node-externals: 1.7.2
+    transitivePeerDependencies:
+      - bufferutil
+      - canvas
+      - node-notifier
+      - prettier
+      - supports-color
+      - ts-node
+      - typescript
+      - utf-8-validate
+      - webpack-cli
+      - webpack-command
+    dev: true
 
   /@nrwl/react/12.9.0_24ce19a5c69d7f2de2901d46dbd985dc:
     resolution: {integrity: sha512-CezxJ6qFf6LszaR/NI8rQlXFGqieRMa4ORGmzQVTahdjnot5xTRT+c3RV6yLmHqkKoXgHXZNJi1PMtbD4kRsCw==}
@@ -10770,6 +10809,13 @@ packages:
       source-map-url: 0.4.1
       urix: 0.1.0
 
+  /source-map-support/0.5.19:
+    resolution: {integrity: sha512-Wonm7zOCIJzBGQdB+thsPar0kYuCIzYvxZwlBa87yi/Mdjv7Tip2cyVbLj5o0cFPN4EVkuTwb3GDDyUx2DGnGw==}
+    dependencies:
+      buffer-from: 1.1.2
+      source-map: 0.6.1
+    dev: true
+
   /source-map-support/0.5.20:
     resolution: {integrity: sha512-n1lZZ8Ve4ksRqizaBQgxXDgKwttHDhyfQjA6YZZn8+AroHbsIz+JjwxQDxbp+7y5OYCI8t1Yk7etjD9CRd2hIw==}
     dependencies:
@@ -11437,6 +11483,11 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       punycode: 2.1.1
+
+  /tree-kill/1.2.2:
+    resolution: {integrity: sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==}
+    hasBin: true
+    dev: true
 
   /ts-jest/27.0.3_jest@27.0.3+typescript@4.3.5:
     resolution: {integrity: sha512-U5rdMjnYam9Ucw+h0QvtNDbc5+88nxt7tbIvqaZUhFrfG4+SkWhMXjejCLVGcpILTPuV+H3W/GZDZrnZFpPeXw==}
