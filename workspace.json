@@ -61,7 +61,17 @@
     "@nrwl/react": {
       "application": {
         "babel": true
-      }
+      
+      },
+      "library": {
+        "style": "none",
+        "pascalCaseFiles": true,
+        
+        "publishable": false,
+        "component": false,
+        "buildable": false,
+        "importPath": "@atlascode/frontend-"
+      } 
     },
     "@nrwl/next": {
       "application": {
