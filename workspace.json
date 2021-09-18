@@ -142,12 +142,40 @@
           }
         }
       }
+    },
+    "frontend-services": {
+      "root": "libs/frontend-services",
+      "sourceRoot": "libs/frontend-services/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/frontend-services/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/frontend-services"],
+          "options": {
+            "jestConfig": "libs/frontend-services/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
     "defaultCollection": "@nrwl/next"
   },
   "generators": {
+    "@nwrl/node": {
+      "library": {
+        "pascalCaseFiles": true,
+        "importPath": "@atlascode/"
+      }
+    },
     "@nrwl/react": {
       "application": {
         "babel": true
