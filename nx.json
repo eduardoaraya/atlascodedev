@@ -32,6 +32,9 @@
     },
     "frontend-components": {
       "tags": []
+    },
+    "frontend-pages": {
+      "tags": []
     }
   }
 }

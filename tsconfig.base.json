@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@atlascode/frontend-": ["libs/frontend-components/src/index.ts"]
+      "@atlascode/frontend-components": [
+        "libs/frontend-components/src/index.ts"
+      ],
+      "@atlascode/frontend-pages": ["libs/frontend-pages/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
