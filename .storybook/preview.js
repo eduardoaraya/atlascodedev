@@ -1,6 +1,5 @@
 import React from 'react';
-import { StoryContext } from '@storybook/react';
-import ThemeProvider from '../libs/frontend-theme/src/lib/ThemeProvider/ThemeProvider';
+import { ThemeProvider } from '../libs/frontend-theme/src/lib/ThemeProvider/ThemeProvider';
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   viewport: {
@@ -63,12 +62,6 @@ export const parameters = {
 };
 
 // eslint-disable-next-line @typescript-eslint/ban-types
-const withTheme = (StoryFn: Function, context: StoryContext) => {
-  return (
-    <ThemeProvider>
-      <StoryFn />
-    </ThemeProvider>
-  );
-};
+const withTheme = (StoryFn, context) =>  React.createElement(ThemeProvider, {}, StoryFn())
 
 export const decorators = [withTheme];
