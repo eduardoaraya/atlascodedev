@@ -7,6 +7,7 @@ specifiers:
   '@emotion/styled': ^11.3.0
   '@mui/icons-material': ^5.0.0-rc.1
   '@mui/material': ^5.0.0-rc.1
+  '@mui/system': ^5.0.0-rc.1
   '@nrwl/cli': 12.9.0
   '@nrwl/eslint-plugin-nx': 12.9.0
   '@nrwl/jest': 12.9.0
@@ -55,6 +56,7 @@ dependencies:
   '@emotion/styled': 11.3.0_e48566ee9a42618c421e934de13d47b9
   '@mui/icons-material': 5.0.0-rc.1_5837226594cc0302fba81b1055e2f1c2
   '@mui/material': 5.0.0-rc.1_2aabb0f0d3af50c9d76745c4f83f7bff
+  '@mui/system': 5.0.0-rc.1_1b8a390c1218df869c93c0893911ddd6
   '@nrwl/next': 12.9.0_71e3740b3ea9d1203d68afe5200ffa67
   core-js: 3.17.3
   next: 11.1.0_c8387e56bc3b6d5950464ec7c874e6c5
