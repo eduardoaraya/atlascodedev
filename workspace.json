@@ -311,6 +311,28 @@
         }
       }
     },
+    "frontend-theme": {
+      "root": "libs/frontend-theme",
+      "sourceRoot": "libs/frontend-theme/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/frontend-theme/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/frontend-theme"],
+          "options": {
+            "jestConfig": "libs/frontend-theme/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "frontend-utility": {
       "root": "libs/frontend-utility",
       "sourceRoot": "libs/frontend-utility/src",

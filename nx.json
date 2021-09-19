@@ -54,6 +54,9 @@
     "frontend-services": {
       "tags": []
     },
+    "frontend-theme": {
+      "tags": []
+    },
     "frontend-utility": {
       "tags": []
     }
