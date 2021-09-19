@@ -1,1 +1,1 @@
-export * from './lib/FrontendUtility';
+export * from './lib/LottieWrapper/LottieWrapper';
