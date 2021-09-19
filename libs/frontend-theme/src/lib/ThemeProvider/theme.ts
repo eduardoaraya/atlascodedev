@@ -9,6 +9,16 @@ const titleStyle = (size: string): TypographyStyleOptions => ({
 });
 
 export const theme = createTheme({
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: '50px',
+        },
+      },
+    },
+  },
+
   breakpoints: {
     values: {
       xs: 300,
