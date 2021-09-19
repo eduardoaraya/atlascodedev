@@ -58,6 +58,7 @@
     "@mui/system": "^5.0.0-rc.1",
     "@nrwl/next": "12.9.0",
     "core-js": "^3.6.5",
+    "framer-motion": "^4.1.17",
     "lodash": "^4.17.21",
     "lottie-web": "^5.7.13",
     "next": "11.1.0",
