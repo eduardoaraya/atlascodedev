@@ -1,24 +1,37 @@
+import React from 'react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+import { CacheProvider, EmotionCache } from '@emotion/react';
+import createEmotionCache from '@emotion/cache';
+import { ThemeProvider } from '@atlascode/frontend-theme';
+import '../../public/css/global.css';
 
-function CustomApp({ Component, pageProps }: AppProps) {
+function CustomApp(props: AppProps & { emotionCache?: EmotionCache }) {
+  const clientSideCache = createEmotionCache({ key: 'css' });
+  const {
+    Component,
+    pageProps,
+    emotionCache = clientSideCache,
+    router,
+  } = props;
+
   return (
     <>
       <Head>
         <title>Welcome to frontend!</title>
       </Head>
-      <div className="app">
-        <header className="flex">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/nx-logo-white.svg" alt="Nx logo" width="75" height="50" />
-          <h1>Welcome to frontend!</h1>
-        </header>
-        <main>
-          <Component {...pageProps} />
-        </main>
-      </div>
+      <CacheProvider value={emotionCache}>
+        <ThemeProvider>
+          <div className="app">
+            <Component {...pageProps} />
+          </div>
+        </ThemeProvider>
+      </CacheProvider>
     </>
   );
 }
 
 export default CustomApp;
+
+// Front simples para landing -
+// Front com painel - Nextjs + Painel dinâmico  + Instanciar EC2 ou equivalente na nuvem e rodar imagem do POSTGRES
