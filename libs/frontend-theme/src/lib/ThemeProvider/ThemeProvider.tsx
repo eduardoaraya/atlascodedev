@@ -1,11 +1,20 @@
-/* eslint-disable-next-line */
-export interface ThemeProviderProps {}
+import {
+  ThemeProvider as MaterialThemeProvider,
+  CssBaseline,
+} from '@mui/material';
+import defaultTheme from './theme';
 
-export function ThemeProvider(props: ThemeProviderProps) {
+/* eslint-disable-next-line */
+export interface ThemeProviderProps {
+  children?: React.ReactNode;
+}
+
+export function ThemeProvider({ children }: ThemeProviderProps) {
   return (
-    <div>
-      <h1>Welcome to ThemeProvider!</h1>
-    </div>
+    <MaterialThemeProvider theme={defaultTheme}>
+      <CssBaseline />
+      {children}
+    </MaterialThemeProvider>
   );
 }
 
