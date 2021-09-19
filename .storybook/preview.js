@@ -1,6 +1,5 @@
 import React from 'react';
-import { StoryContext } from '@storybook/react';
-import ThemeProvider from '../libs/frontend-theme/src/lib/ThemeProvider/ThemeProvider';
+import { ThemeProvider } from '../libs/frontend-theme/src/lib/ThemeProvider/ThemeProvider';
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   viewport: {
@@ -62,13 +61,7 @@ export const parameters = {
   },
 };
 
-// eslint-disable-next-line @typescript-eslint/ban-types
-const withTheme = (StoryFn: Function, context: StoryContext) => {
-  return (
-    <ThemeProvider>
-      <StoryFn />
-    </ThemeProvider>
-  );
-};
+// Do not use JSX as it is not picked up by Babel during webpack bundling time, preventing us from directly importing this file inside our local storybook preview file within individual libraries. 
+const withTheme = (StoryFn, context) =>  React.createElement(ThemeProvider, {}, StoryFn())
 
 export const decorators = [withTheme];

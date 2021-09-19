@@ -1,3 +1,4 @@
+import { Box } from '@mui/material';
 /* eslint-disable-next-line */
 export interface HeaderProps {}
 
