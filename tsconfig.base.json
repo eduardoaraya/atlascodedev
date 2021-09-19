@@ -18,6 +18,7 @@
       "@atlascode/frontend-components": [
         "libs/frontend-components/src/index.ts"
       ],
+      "@atlascode/frontend-forms": ["libs/frontend-forms/src/index.ts"],
       "@atlascode/frontend-hooks": ["libs/frontend-hooks/src/index.ts"],
       "@atlascode/frontend-jss-mixins": [
         "libs/frontend-jss-mixins/src/index.ts"
