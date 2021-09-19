@@ -1,8 +1,10 @@
 import { createTheme, responsiveFontSizes } from '@mui/material';
 import breakpoints from './breakpoints';
+import components from './components';
+import palette from './palette';
 import typography from './typography';
 
-export const palette = createTheme({
+export const paletteLocal = createTheme({
   palette: {
     primary: {
       main: '#FF793F',
@@ -14,35 +16,10 @@ export const palette = createTheme({
 });
 
 export const theme = createTheme({
-  components: {
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          fontSize: '10px',
-          borderRadius: '50px',
-          padding: '0.8em 2.8em',
-          textTransform: 'inherit',
-
-          '&.MuiButton-outlined': {
-            border: `2.5px solid ${palette.palette.primary.main}`,
-            fontWeight: 500,
-          },
-        },
-      },
-    },
-  },
-
+  components: components(paletteLocal),
   breakpoints: breakpoints,
   typography: typography,
-
-  palette: {
-    primary: {
-      main: '#FF793F',
-    },
-    secondary: {
-      main: '#283047',
-    },
-  },
+  palette: palette,
 });
 
 export default responsiveFontSizes(theme);
