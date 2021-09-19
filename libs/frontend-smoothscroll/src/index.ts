@@ -1,1 +1,2 @@
-export * from './lib/FrontendSmoothscroll';
+export * from './lib/SmoothScrollModalPlugin/SmoothScrollModalPlugin';
+export * from './lib/UseSmoothScroll/UseSmoothScroll';
