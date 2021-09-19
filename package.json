@@ -49,6 +49,9 @@
     "url-loader": "^3.0.0"
   },
   "dependencies": {
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@mui/material": "^5.0.0-rc.1",
     "@nrwl/next": "12.9.0",
     "core-js": "^3.6.5",
     "next": "11.1.0",
