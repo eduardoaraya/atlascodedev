@@ -61,7 +61,7 @@ export const parameters = {
   },
 };
 
-// eslint-disable-next-line @typescript-eslint/ban-types
+// Do not use JSX as it is not picked up by Babel during webpack bundling time, preventing us from directly importing this file inside our local storybook preview file within individual libraries. 
 const withTheme = (StoryFn, context) =>  React.createElement(ThemeProvider, {}, StoryFn())
 
 export const decorators = [withTheme];
