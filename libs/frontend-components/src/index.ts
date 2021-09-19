@@ -1,1 +1,1 @@
-export * from './lib/PlaceholderComponent/PlaceholderComponent';
+export * from './lib/Header/Header';
