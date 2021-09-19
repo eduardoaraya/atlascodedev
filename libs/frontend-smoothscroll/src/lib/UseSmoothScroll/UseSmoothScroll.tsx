@@ -3,7 +3,7 @@ import { Scrollbar as IScrollbar } from 'smooth-scrollbar/scrollbar';
 import Scrollbar from 'smooth-scrollbar';
 import { isString } from 'lodash';
 import isBrowser from '../helpers/isBrowser';
-import ScrollbarModalPlugin from '../SmoothScrollModalPlugin/SmoothScrollModalPlugin';
+import ScrollbarModalPlugin from '../plugins/SmoothScrollModalPlugin/SmoothScrollModalPlugin';
 
 export type SmoothScrollHook = (
   ref: React.RefObject<HTMLElement>,
