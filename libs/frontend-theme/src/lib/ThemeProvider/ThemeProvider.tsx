@@ -2,7 +2,8 @@ import {
   ThemeProvider as MaterialThemeProvider,
   CssBaseline,
 } from '@mui/material';
-import defaultTheme from './theme';
+import GlobalStyles from '../GlobalStyles/Global';
+import defaultTheme from '../theme/theme';
 
 /* eslint-disable-next-line */
 export interface ThemeProviderProps {
@@ -12,6 +13,7 @@ export interface ThemeProviderProps {
 export function ThemeProvider({ children }: ThemeProviderProps) {
   return (
     <MaterialThemeProvider theme={defaultTheme}>
+      <GlobalStyles />
       <CssBaseline />
       {children}
     </MaterialThemeProvider>
