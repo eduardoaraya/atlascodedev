@@ -25,6 +25,9 @@
       "@atlascode/frontend-pages": ["libs/frontend-pages/src/index.ts"],
       "@atlascode/frontend-sections": ["libs/frontend-sections/src/index.ts"],
       "@atlascode/frontend-services": ["libs/frontend-services/src/index.ts"],
+      "@atlascode/frontend-smoothscroll": [
+        "libs/frontend-smoothscroll/src/index.ts"
+      ],
       "@atlascode/frontend-theme": ["libs/frontend-theme/src/index.ts"],
       "@atlascode/frontend-utility": ["libs/frontend-utility/src/index.ts"]
     }

@@ -54,6 +54,9 @@
     "frontend-services": {
       "tags": []
     },
+    "frontend-smoothscroll": {
+      "tags": []
+    },
     "frontend-theme": {
       "tags": []
     },
