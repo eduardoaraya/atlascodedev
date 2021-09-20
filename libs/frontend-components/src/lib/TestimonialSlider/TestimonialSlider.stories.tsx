@@ -28,10 +28,22 @@ const Template: Story<TestimonialSliderProps> = (args) => (
 
 export const Primary = Template.bind({});
 Primary.args = {
-  bgcolor: '#181D26',
-  logo: 'images/hightech.png',
-  testimonial:
-    'Só tenho a agradecer ao atendimento prestado pelo Atlas Code. Foram atenciosos do começo ao fim do projeto e me auxiliaram em diversas dúvida sobre negócios digitais. ',
-  testimonialName: 'Enir Menezes',
-  testimonialCompany: 'Serralheria High Tech',
+  testimonials: [
+    {
+      bgcolor: '#181D26',
+      logo: './images/hightech.png',
+      testimonial:
+        'Só tenho a agradecer ao atendimento prestado pelo Atlas Code. Foram atenciosos do começo ao fim do projeto e me auxiliaram em diversas dúvida sobre negócios digitais. ',
+      testimonialName: 'Enir Menezes',
+      testimonialCompany: 'Serralheria High Tech',
+    },
+    {
+      bgcolor: '#1C3664',
+      logo: './images/procidadania.png',
+      testimonial:
+        'Só tenho a agradecer ao atendimento prestado pelo Atlas Code. Foram atenciosos do começo ao fim do projeto e me auxiliaram em diversas dúvida sobre negócios digitais. ',
+      testimonialName: 'Vanessa Sanchez',
+      testimonialCompany: 'Pro Cidadania Org',
+    },
+  ],
 };

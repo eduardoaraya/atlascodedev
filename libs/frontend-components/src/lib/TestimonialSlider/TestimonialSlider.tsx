@@ -1,86 +1,99 @@
+import React from 'react';
 import { CircleIconButton } from '@atlascode/frontend-components';
 import { useMemoizedMergedObject } from '@atlascode/frontend-hooks';
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
 import { Box, BoxProps, Theme, Typography } from '@mui/material';
 import { SxProps } from '@mui/system';
 import { Property } from 'csstype';
+import { useTestimonialSlider } from './useTestimonialSlider';
 
 /* eslint-disable-next-line */
 export interface TestimonialSliderProps extends BoxProps {
+  testimonials?: TestimonialSliderItem[];
+}
+
+export type TestimonialSliderItem = {
   bgcolor: Property.BackgroundColor;
   logo: string;
   testimonial: string;
   testimonialName: string;
   testimonialCompany: string;
-}
+};
 
 export function TestimonialSlider({
   sx,
-  bgcolor,
-  logo,
-  testimonial,
-  testimonialName,
-  testimonialCompany,
+  testimonials = [],
   ...rest
 }: TestimonialSliderProps) {
+  const { activeTestimonial, backwards, forward } =
+    useTestimonialSlider(testimonials);
+
   const defaultStylesMemo = useMemoizedMergedObject(
-    defaultStyles(bgcolor),
+    defaultStyles(activeTestimonial?.bgcolor ?? '#333'),
     sx,
-    [bgcolor]
+    [activeTestimonial?.bgcolor]
   );
 
   return (
     <Box {...rest} sx={defaultStylesMemo}>
-      <Box className="AtlasCode-TestimonialSlider-root">
-        <Box className="backwards">
-          <CircleIconButton
-            fontSize={{ xs: '1.25em' }}
-            inverted
-            icon={ArrowBack}
-          />
-        </Box>
-
-        <Box className="forward">
-          <CircleIconButton
-            fontSize={{ xs: '1.25em' }}
-            inverted
-            icon={ArrowForward}
-          />
-        </Box>
-
-        <Box className="grid">
-          <Box className="picture-container">
-            <Box component="img" src={logo} className="picture" />
+      {activeTestimonial && (
+        <Box className="AtlasCode-TestimonialSlider-root">
+          <Box className="backwards">
+            <CircleIconButton
+              onClick={backwards}
+              fontSize={{ xs: '1.25em' }}
+              inverted
+              icon={ArrowBack}
+            />
           </Box>
 
-          <Box className="text-container">
-            <Typography variant="subtitle1" className="testimonial">
-              {testimonial}
-            </Typography>
-            <Box className="testimonial-personal-info-container">
-              <Typography
-                className="testimonial-personal-name"
-                variant="subtitle1"
-              >
-                {testimonialName}
+          <Box className="forward">
+            <CircleIconButton
+              onClick={forward}
+              fontSize={{ xs: '1.25em' }}
+              inverted
+              icon={ArrowForward}
+            />
+          </Box>
+
+          <Box className="grid">
+            <Box className="picture-container">
+              <Box
+                component="img"
+                src={activeTestimonial.logo}
+                className="picture"
+              />
+            </Box>
+
+            <Box className="text-container">
+              <Typography variant="subtitle1" className="testimonial">
+                {activeTestimonial.testimonial}
               </Typography>
-              <Typography
-                className="testimonial-personal-company"
-                variant="subtitle2"
-              >
-                {testimonialCompany}
-              </Typography>
+              <Box className="testimonial-personal-info-container">
+                <Typography
+                  className="testimonial-personal-name"
+                  variant="subtitle1"
+                >
+                  {activeTestimonial.testimonialName}
+                </Typography>
+                <Typography
+                  className="testimonial-personal-company"
+                  variant="subtitle2"
+                >
+                  {activeTestimonial.testimonialCompany}
+                </Typography>
+              </Box>
             </Box>
           </Box>
         </Box>
-      </Box>
+      )}
     </Box>
   );
 }
 
 export default TestimonialSlider;
 
-const defaultStyles = (bgcolor: Property.BackgroundColor) => {
+const defaultStyles = (bgcolor: Property.BackgroundColor = '#333') => {
   return {
     '.AtlasCode-TestimonialSlider-root': {
       fontSize: '10px',
