@@ -45,9 +45,6 @@
     "frontend-hooks": {
       "tags": []
     },
-    "frontend-icons": {
-      "tags": []
-    },
     "frontend-jss-mixins": {
       "tags": []
     },
@@ -61,6 +58,9 @@
       "tags": []
     },
     "frontend-smoothscroll": {
+      "tags": []
+    },
+    "frontend-svgs": {
       "tags": []
     },
     "frontend-theme": {

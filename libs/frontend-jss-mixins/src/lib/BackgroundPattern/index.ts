@@ -1,4 +1,4 @@
-import { CSSInterpolation, darken } from '@material-ui/system';
+import { CSSInterpolation, darken } from '@mui/system';
 
 export const wavyPattern = (
   bgColor: string,

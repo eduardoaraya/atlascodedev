@@ -20,7 +20,6 @@
       ],
       "@atlascode/frontend-forms": ["libs/frontend-forms/src/index.ts"],
       "@atlascode/frontend-hooks": ["libs/frontend-hooks/src/index.ts"],
-      "@atlascode/frontend-icons": ["libs/frontend-icons/src/index.ts"],
       "@atlascode/frontend-jss-mixins": [
         "libs/frontend-jss-mixins/src/index.ts"
       ],
@@ -30,6 +29,7 @@
       "@atlascode/frontend-smoothscroll": [
         "libs/frontend-smoothscroll/src/index.ts"
       ],
+      "@atlascode/frontend-svgs": ["libs/frontend-svgs/src/index.ts"],
       "@atlascode/frontend-theme": ["libs/frontend-theme/src/index.ts"],
       "@atlascode/frontend-utility": ["libs/frontend-utility/src/index.ts"]
     }

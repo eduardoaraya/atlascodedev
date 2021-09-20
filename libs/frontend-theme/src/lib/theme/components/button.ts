@@ -1,11 +1,18 @@
 import { Theme, Components } from '@mui/material';
 
-const buttonOverride = (theme: Theme): Components['MuiButton'] => {
+export const buttonOverride = (theme: Theme): Components['MuiButton'] => {
   return {
     styleOverrides: {
       root: {
-        fontSize: '10px',
+        fontSize: '1em',
         textTransform: 'inherit',
+        boxShadow: 'none',
+      },
+
+      contained: {
+        fontWeight: 800,
+        borderRadius: '50px',
+        padding: '1.4em 3em',
       },
 
       outlinedPrimary: {
@@ -22,6 +29,18 @@ const buttonOverride = (theme: Theme): Components['MuiButton'] => {
 
       textSecondary: {
         color: theme.palette.secondary.main,
+      },
+    },
+  };
+};
+
+export const buttonBaseOverride = (
+  theme: Theme
+): Components['MuiButtonBase'] => {
+  return {
+    styleOverrides: {
+      root: {
+        fontSize: '1em',
       },
     },
   };
