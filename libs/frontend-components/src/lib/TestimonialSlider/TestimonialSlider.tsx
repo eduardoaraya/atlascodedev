@@ -1,4 +1,6 @@
+import { CircleIconButton } from '@atlascode/frontend-components';
 import { useMemoizedMergedObject } from '@atlascode/frontend-hooks';
+import { ArrowBack, ArrowForward } from '@mui/icons-material';
 import { Box, BoxProps, Theme, Typography } from '@mui/material';
 import { SxProps } from '@mui/system';
 import { Property } from 'csstype';
@@ -30,6 +32,22 @@ export function TestimonialSlider({
   return (
     <Box {...rest} sx={defaultStylesMemo}>
       <Box className="AtlasCode-TestimonialSlider-root">
+        <Box className="backwards">
+          <CircleIconButton
+            fontSize={{ xs: '1.25em' }}
+            inverted
+            icon={ArrowBack}
+          />
+        </Box>
+
+        <Box className="forward">
+          <CircleIconButton
+            fontSize={{ xs: '1.25em' }}
+            inverted
+            icon={ArrowForward}
+          />
+        </Box>
+
         <Box className="grid">
           <Box className="picture-container">
             <Box component="img" src={logo} className="picture" />
@@ -70,6 +88,26 @@ const defaultStyles = (bgcolor: Property.BackgroundColor) => {
       height: { xs: '61.9em', lg: '40.6em' },
       border: (theme) => `0.5px solid ${theme.palette.grey[400]}`,
       borderRadius: '20px',
+      position: 'relative',
+
+      '.forward': {
+        position: 'absolute',
+        top: { xs: '25%', lg: '50%' },
+        transform: {
+          xs: 'translateY(-25%) translateX(25px)',
+          lg: 'translateY(-50%) translateX(25px)',
+        },
+        right: 0,
+        zIndex: 5,
+      },
+
+      '.backwards': {
+        position: 'absolute',
+        top: { xs: '25%', lg: '50%' },
+        left: 0,
+        transform: 'translateY(-25%) translateX(-25px) ',
+        zIndex: 5,
+      },
 
       '.grid': {
         display: 'grid',
