@@ -1,3 +1,4 @@
+export * from './lib/NextLogo/NextLogo';
 export * from './lib/ReactLogo/ReactLogo';
 export * from './lib/FigmaLogo/FigmaLogo';
 export * from './lib/GraphIcon/GraphIcon';
