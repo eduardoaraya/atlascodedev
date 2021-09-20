@@ -1,6 +1,7 @@
 import { useMemoizedMergedObject } from '@atlascode/frontend-hooks';
 import { Box, BoxProps, Theme } from '@mui/material';
 import { SxProps } from '@mui/system';
+import ProjectItemTags from './ProjectItemTags';
 import ProjectItemTech from './ProjectItemTech';
 /* eslint-disable-next-line */
 export interface ProjectItemProps extends BoxProps {
@@ -21,7 +22,7 @@ export function ProjectItem({
   return (
     <Box sx={defaultStylesMemo} {...rest}>
       <Box className="AtlasCode-ProjectItem-root">
-        <ProjectItemTech tech="node" />
+        <ProjectItemTags tags={['Desenvolvimento', 'Rebranding', 'UI', 'UX']} />
       </Box>
     </Box>
   );
