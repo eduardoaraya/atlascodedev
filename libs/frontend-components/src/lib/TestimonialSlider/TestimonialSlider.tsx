@@ -39,7 +39,20 @@ export function TestimonialSlider({
             <Typography variant="subtitle1" className="testimonial">
               {testimonial}
             </Typography>
-            <Box className="testimonial-personal"></Box>
+            <Box className="testimonial-personal-info-container">
+              <Typography
+                className="testimonial-personal-name"
+                variant="subtitle1"
+              >
+                {testimonialName}
+              </Typography>
+              <Typography
+                className="testimonial-personal-company"
+                variant="subtitle2"
+              >
+                {testimonialCompany}
+              </Typography>
+            </Box>
           </Box>
         </Box>
       </Box>
@@ -73,8 +86,9 @@ const defaultStyles = (bgcolor: Property.BackgroundColor) => {
         bgcolor: bgcolor,
         justifyContent: 'center',
         alignItems: 'center',
-        borderTopLeftRadius: '20px',
-        borderBottomLeftRadius: '20px',
+        borderTopLeftRadius: { xs: '20px', lg: '20px' },
+        borderBottomLeftRadius: { xs: 0, lg: '20px' },
+        borderTopRightRadius: { xs: '20px', lg: 0 },
         position: 'relative',
       },
 
@@ -89,8 +103,9 @@ const defaultStyles = (bgcolor: Property.BackgroundColor) => {
         height: '100%',
         width: '100%',
         justifyContent: 'center',
-        alignItems: 'center',
-        px: { lg: '5em' },
+        px: { xs: '3em', lg: '5em' },
+        flexDirection: 'column',
+        gap: { xs: 3, lg: 5 },
       },
 
       '.testimonial': {
@@ -101,6 +116,18 @@ const defaultStyles = (bgcolor: Property.BackgroundColor) => {
       '.testimonial-personal-info-container': {
         display: 'flex',
         flexDirection: 'column',
+        color: (theme) => theme.palette.secondary.main,
+        borderTop: (theme) => `1px solid ${theme.palette.grey[400]}`,
+        py: { xs: 2 },
+      },
+
+      '.testimonial-personal-name': {
+        fontSize: { xs: '1.8em' },
+        fontWeight: 900,
+      },
+
+      '.testimonial-personal-company': {
+        fontSize: { xs: '1.4em', lg: '1.6em' },
       },
     },
   } as SxProps<Theme>;
