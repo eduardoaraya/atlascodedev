@@ -3,6 +3,9 @@ import { Box, BoxProps, Button, Paper, Theme, Typography } from '@mui/material';
 import { useMemoizedMergedObject } from '@atlascode/frontend-hooks';
 import { AtlasLogo } from '@atlascode/frontend-icons';
 import React from 'react';
+import AnimatedBurguerMenu, {
+  KotaBurguerProps,
+} from '../AnimatedBurguerMenu/AnimatedBurguerMenu';
 
 export type MenuItem = {
   action: (...args: unknown[]) => void;
@@ -13,6 +16,7 @@ export type MenuItem = {
 export interface HeaderProps extends BoxProps<typeof Paper> {
   menuItems: MenuItem[];
   callToActionButton: MenuItem;
+  AnimatedBurguerMenuProps?: KotaBurguerProps;
 }
 
 export function Header({
@@ -22,6 +26,9 @@ export function Header({
   callToActionButton = {
     action: () => console.log('Button was clicked'),
     label: 'Faça seu orçamento',
+  },
+  AnimatedBurguerMenuProps = {
+    fontSize: '6px',
   },
   ...rest
 }: HeaderProps) {
@@ -37,6 +44,10 @@ export function Header({
       <Box className="grid-container">
         <Box className="logo-container">
           <AtlasLogo className="logo" />
+        </Box>
+
+        <Box className="burguer-container">
+          <AnimatedBurguerMenu {...AnimatedBurguerMenuProps} />
         </Box>
 
         <Box className="menu-items-container">
@@ -78,6 +89,16 @@ const defaultStyles = () => {
     fontSize: '10px',
     height: '9em',
     width: '100%',
+
+    '.burguer-container': {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+
+      '@media (min-width: 1024px)': {
+        display: 'none',
+      },
+    },
 
     '.grid-container': {
       display: 'grid',
