@@ -18,10 +18,13 @@ export function ProjectsSection({
   return (
     <Box {...rest} sx={defaultStylesMemo}>
       <Box className="AtlasCode-ProjectsSection-root">
-        <Box className="container">
-          <Typography className="title" variant="h2"></Typography>
+        <Box className="AtlasCode-ProjectsSection-container">
+          <Typography
+            className="AtlasCode-ProjectsSection-title"
+            variant="h2"
+          ></Typography>
 
-          <Box className="projects-list">
+          <Box className="AtlasCode-ProjectsSection-project-list">
             {projects.map(
               (
                 { tags, techList, title, websiteURL, inverted, ...rest },
@@ -29,6 +32,10 @@ export function ProjectsSection({
               ) => {
                 return (
                   <ProjectItem
+                    sx={{
+                      justifyContent: 'center',
+                      display: 'flex',
+                    }}
                     tags={tags}
                     techList={techList}
                     title={title}
@@ -54,20 +61,21 @@ const defaultStyles = () => {
     '.AtlasCode-ProjectsSection-root': {
       fontSize: '10px',
 
-      '.container': {
+      '.AtlasCode-ProjectsSection-container': {
         display: 'flex',
         flexDirection: 'column',
       },
 
-      '.title': {
+      '.AtlasCode-ProjectsSection-title': {
         fontSize: { xs: '2.4em', lg: '3.8em' },
         fontWeight: 900,
         py: { xs: 5 },
       },
 
-      '.projects-list': {
+      '.AtlasCode-ProjectsSection-project-list': {
         display: 'flex',
         flexDirection: 'column',
+        gap: { xs: 0, lg: 20 },
       },
     },
   } as SxProps<Theme>;
