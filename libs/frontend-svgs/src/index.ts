@@ -1,3 +1,4 @@
+export * from './lib/FigmaLogo/FigmaLogo';
 export * from './lib/GraphIcon/GraphIcon';
 export * from './lib/CogIcon/CogIcon';
 export * from './lib/CodeIcon/CodeIcon';
