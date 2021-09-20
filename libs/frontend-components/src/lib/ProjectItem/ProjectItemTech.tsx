@@ -50,9 +50,12 @@ const ProjectItemTech = ({
   return (
     <Box {...rest} sx={defaultStylesMemo}>
       <Box className="AtlasCode-ProjectItemTech-root">
-        <Box className="container">
+        <Box className="AtlasCode-ProjectItemTech-container">
           <Box className="icon" component={Tech[tech].logo} />
-          <Typography variant="caption" className="title">
+          <Typography
+            variant="caption"
+            className="AtlasCode-ProjectItemTech-title"
+          >
             {Tech[tech].name}
           </Typography>
         </Box>
@@ -68,7 +71,7 @@ const defaultStyles = () => {
     '.AtlasCode-ProjectItemTech-root': {
       fontSize: '10px',
 
-      '.container': {
+      '.AtlasCode-ProjectItemTech-container': {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -77,11 +80,11 @@ const defaultStyles = () => {
       },
 
       '.icon': {
-        height: '4.4em',
+        height: { xs: '3.3em', lg: '4.4em' },
         width: 'auto',
       },
 
-      '.title': {
+      '.AtlasCode-ProjectItemTech-title': {
         fontSize: { xs: '1.1em', lg: '1.52em' },
         color: (theme) => theme.palette.secondary.light,
         fontWeight: 900,
