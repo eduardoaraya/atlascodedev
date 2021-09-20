@@ -13,7 +13,8 @@ export default {
   },
   decorators: [
     (Story) => (
-      <Box sx={{ width: '100%', height: '100vh' }}>
+      <Box>
+        <Box sx={{ width: '100%', height: '150vh' }} />
         <Story />
       </Box>
     ),
@@ -24,9 +25,5 @@ const Template: Story<FooterProps> = (args) => <Footer {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  sx: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-  },
+  sx: {},
 };

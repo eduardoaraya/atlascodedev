@@ -8,6 +8,7 @@ export const paletteLocal = createTheme({
   palette: {
     primary: {
       main: '#FF793F',
+      contrastText: '#fff',
     },
     secondary: {
       main: '#283047',
