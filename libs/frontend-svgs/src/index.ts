@@ -1,3 +1,4 @@
+export * from './lib/NodeLogo/NodeLogo';
 export * from './lib/NextLogo/NextLogo';
 export * from './lib/ReactLogo/ReactLogo';
 export * from './lib/FigmaLogo/FigmaLogo';
