@@ -1,9 +1,9 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import React from 'react';
 import _ from 'lodash';
 /* eslint-disable-next-line */
 
-// eslint-disable-next-line @typescript-eslint/ban-types
-export function useMemoizedMergedObject<T extends {}, R extends {}>(
+export function useMemoizedMergedObject<T, R>(
   destinationObject: T,
   sourceObject: R,
   deps?: React.DependencyList | undefined
