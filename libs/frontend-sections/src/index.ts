@@ -1,1 +1,1 @@
-export * from './lib/FrontendSections';
+export * from './lib/HomeHero/HomeHero';
