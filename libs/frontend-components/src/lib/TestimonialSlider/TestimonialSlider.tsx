@@ -1,55 +1,116 @@
+import React from 'react';
+import { CircleIconButton } from '@atlascode/frontend-components';
 import { useMemoizedMergedObject } from '@atlascode/frontend-hooks';
+import { ArrowBack, ArrowForward } from '@mui/icons-material';
 import { Box, BoxProps, Theme, Typography } from '@mui/material';
 import { SxProps } from '@mui/system';
 import { Property } from 'csstype';
+import { useTestimonialSlider } from './useTestimonialSlider';
+import { MotionBox } from '@atlascode/frontend-utility';
+import { motion } from 'framer-motion';
 
 /* eslint-disable-next-line */
 export interface TestimonialSliderProps extends BoxProps {
+  testimonials?: TestimonialSliderItem[];
+}
+
+export type TestimonialSliderItem = {
   bgcolor: Property.BackgroundColor;
   logo: string;
   testimonial: string;
   testimonialName: string;
   testimonialCompany: string;
-}
+};
 
 export function TestimonialSlider({
   sx,
-  bgcolor,
-  logo,
-  testimonial,
-  testimonialName,
-  testimonialCompany,
+  testimonials = [],
   ...rest
 }: TestimonialSliderProps) {
+  const { activeTestimonial, backwards, forward, activeIndex } =
+    useTestimonialSlider(testimonials);
+
   const defaultStylesMemo = useMemoizedMergedObject(
-    defaultStyles(bgcolor),
+    defaultStyles(activeTestimonial?.bgcolor ?? '#333'),
     sx,
-    [bgcolor]
+    [activeTestimonial?.bgcolor]
   );
 
   return (
     <Box {...rest} sx={defaultStylesMemo}>
-      <Box className="AtlasCode-TestimonialSlider-root">
-        <Box className="grid">
-          <Box className="picture-container">
-            <Box component="img" src={logo} className="picture" />
+      {activeTestimonial && (
+        <Box className="AtlasCode-TestimonialSlider-root">
+          <Box className="backwards">
+            <CircleIconButton
+              onClick={backwards}
+              fontSize={{ xs: '1.25em' }}
+              inverted
+              icon={ArrowBack}
+            />
           </Box>
 
-          <Box className="text-container">
-            <Typography variant="subtitle1" className="testimonial">
-              {testimonial}
-            </Typography>
-            <Box className="testimonial-personal"></Box>
+          <Box className="forward">
+            <CircleIconButton
+              onClick={forward}
+              fontSize={{ xs: '1.25em' }}
+              inverted
+              icon={ArrowForward}
+            />
+          </Box>
+
+          <Box className="grid">
+            <Box className="picture-container">
+              <motion.img
+                key={activeIndex}
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                src={activeTestimonial.logo}
+                className="picture"
+              />
+            </Box>
+
+            <MotionBox
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {
+                  opacity: 0,
+                },
+                visible: {
+                  opacity: 1,
+                },
+              }}
+              className="text-container"
+              key={activeIndex}
+            >
+              <Typography variant="subtitle1" className="testimonial">
+                {activeTestimonial.testimonial}
+              </Typography>
+              <Box className="testimonial-personal-info-container">
+                <Typography
+                  className="testimonial-personal-name"
+                  variant="subtitle1"
+                >
+                  {activeTestimonial.testimonialName}
+                </Typography>
+                <Typography
+                  className="testimonial-personal-company"
+                  variant="subtitle2"
+                >
+                  {activeTestimonial.testimonialCompany}
+                </Typography>
+              </Box>
+            </MotionBox>
           </Box>
         </Box>
-      </Box>
+      )}
     </Box>
   );
 }
 
 export default TestimonialSlider;
 
-const defaultStyles = (bgcolor: Property.BackgroundColor) => {
+const defaultStyles = (bgcolor: Property.BackgroundColor = '#333') => {
   return {
     '.AtlasCode-TestimonialSlider-root': {
       fontSize: '10px',
@@ -57,6 +118,26 @@ const defaultStyles = (bgcolor: Property.BackgroundColor) => {
       height: { xs: '61.9em', lg: '40.6em' },
       border: (theme) => `0.5px solid ${theme.palette.grey[400]}`,
       borderRadius: '20px',
+      position: 'relative',
+
+      '.forward': {
+        position: 'absolute',
+        top: { xs: '25%', lg: '50%' },
+        transform: {
+          xs: 'translateY(-25%) translateX(25px)',
+          lg: 'translateY(-50%) translateX(25px)',
+        },
+        right: 0,
+        zIndex: 5,
+      },
+
+      '.backwards': {
+        position: 'absolute',
+        top: { xs: '25%', lg: '50%' },
+        left: 0,
+        transform: 'translateY(-25%) translateX(-25px) ',
+        zIndex: 5,
+      },
 
       '.grid': {
         display: 'grid',
@@ -67,14 +148,16 @@ const defaultStyles = (bgcolor: Property.BackgroundColor) => {
       },
 
       '.picture-container': {
+        transition: 'background-color 0.5s ease',
         width: '100%',
         height: '100%',
         display: 'flex',
         bgcolor: bgcolor,
         justifyContent: 'center',
         alignItems: 'center',
-        borderTopLeftRadius: '20px',
-        borderBottomLeftRadius: '20px',
+        borderTopLeftRadius: { xs: '20px', lg: '20px' },
+        borderBottomLeftRadius: { xs: 0, lg: '20px' },
+        borderTopRightRadius: { xs: '20px', lg: 0 },
         position: 'relative',
       },
 
@@ -89,8 +172,9 @@ const defaultStyles = (bgcolor: Property.BackgroundColor) => {
         height: '100%',
         width: '100%',
         justifyContent: 'center',
-        alignItems: 'center',
-        px: { lg: '5em' },
+        px: { xs: '3em', lg: '5em' },
+        flexDirection: 'column',
+        gap: { xs: 3, lg: 5 },
       },
 
       '.testimonial': {
@@ -101,6 +185,18 @@ const defaultStyles = (bgcolor: Property.BackgroundColor) => {
       '.testimonial-personal-info-container': {
         display: 'flex',
         flexDirection: 'column',
+        color: (theme) => theme.palette.secondary.main,
+        borderTop: (theme) => `1px solid ${theme.palette.grey[400]}`,
+        py: { xs: 2 },
+      },
+
+      '.testimonial-personal-name': {
+        fontSize: { xs: '1.8em' },
+        fontWeight: 900,
+      },
+
+      '.testimonial-personal-company': {
+        fontSize: { xs: '1.4em', lg: '1.6em' },
       },
     },
   } as SxProps<Theme>;
