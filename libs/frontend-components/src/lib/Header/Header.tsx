@@ -1,5 +1,5 @@
 import { SxProps } from '@mui/system';
-import { Box, BoxProps, Button, Paper, Theme, Typography } from '@mui/material';
+import { Box, BoxProps, Button, Paper, Theme } from '@mui/material';
 import { useMemoizedMergedObject } from '@atlascode/frontend-hooks';
 import { AtlasLogo } from '@atlascode/frontend-icons';
 import React from 'react';
