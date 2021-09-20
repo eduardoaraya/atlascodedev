@@ -7,6 +7,7 @@ const palette: ThemeOptions['palette'] = {
   },
   secondary: {
     main: '#283047',
+    light: '#3C4661',
   },
 };
 

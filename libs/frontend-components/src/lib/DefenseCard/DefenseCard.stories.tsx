@@ -1,3 +1,4 @@
+import { MoneyIcon } from '@atlascode/frontend-svgs';
 import { Story, Meta } from '@storybook/react';
 import { DefenseCard, DefenseCardProps } from './DefenseCard';
 
@@ -9,4 +10,8 @@ export default {
 const Template: Story<DefenseCardProps> = (args) => <DefenseCard {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+  icon: MoneyIcon,
+  title: 'Preços acessíveis',
+  text: 'Administre seu negócio através do nosso painel.',
+};
