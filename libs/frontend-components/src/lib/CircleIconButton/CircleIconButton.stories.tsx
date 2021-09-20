@@ -1,3 +1,4 @@
+import { Forward } from '@mui/icons-material';
 import { Story, Meta } from '@storybook/react';
 import { CircleIconButton, CircleIconButtonProps } from './CircleIconButton';
 
@@ -11,4 +12,7 @@ const Template: Story<CircleIconButtonProps> = (args) => (
 );
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+  color: 'primary',
+  icon: Forward,
+};
