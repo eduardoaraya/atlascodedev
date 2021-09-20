@@ -1,3 +1,4 @@
+export * from './lib/ProjectItem/ProjectItem';
 export * from './lib/CloudIcon/CloudIcon';
 export * from './lib/PathIcon/PathIcon';
 export * from './lib/DefenseCard/DefenseCard';
