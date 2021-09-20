@@ -21,7 +21,7 @@ export function DefenseCard({
 
   return (
     <Box sx={defaultStylesMemoized}>
-      <Box className="grid">
+      <Box className="AtlasCode-DefenseCard-grid">
         <Box className="icon-container">
           <Box className="icon" component={Icon} />
         </Box>
@@ -57,7 +57,7 @@ const defaultStyles = () => {
       bgcolor: (theme) => theme.palette.secondary.main,
     },
 
-    '.grid': {
+    '.AtlasCode-DefenseCard-grid': {
       display: 'grid',
       gridTemplateColumns: { xs: '20% 80%' },
       gridTemplateRows: '1fr',
@@ -73,7 +73,6 @@ const defaultStyles = () => {
     '.title': {
       fontSize: { xs: '1.4em', lg: '1.6em' },
       fontWeight: 'bold',
-      maxWidth: '22ch',
     },
 
     '.text': {
