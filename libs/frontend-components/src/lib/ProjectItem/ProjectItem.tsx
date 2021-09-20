@@ -1,5 +1,5 @@
 import { useMemoizedMergedObject } from '@atlascode/frontend-hooks';
-import { Box, BoxProps, Theme, Typography, Button } from '@mui/material';
+import { Box, BoxProps, Theme, Typography, useMediaQuery } from '@mui/material';
 import { SxProps } from '@mui/system';
 import ProjectItemTags from './ProjectItemTags';
 import ProjectItemTech, { TechType } from './ProjectItemTech';
@@ -21,10 +21,12 @@ export function ProjectItem({
   websiteURL = 'https://atlascode.dev',
   ...rest
 }: ProjectItemProps) {
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
+
   const defaultStylesMemo = useMemoizedMergedObject(
-    defaultStyles(inverted),
+    defaultStyles(inverted && isDesktop),
     sx,
-    [inverted]
+    [inverted, isDesktop]
   );
 
   return (
