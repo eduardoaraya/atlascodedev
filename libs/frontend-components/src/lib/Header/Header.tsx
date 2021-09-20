@@ -1,12 +1,30 @@
 import { SxProps } from '@mui/system';
-import { Box, BoxProps, Button, Paper, Theme } from '@mui/material';
+import { Box, BoxProps, Button, Paper, Theme, Typography } from '@mui/material';
 import { useMemoizedMergedObject } from '@atlascode/frontend-hooks';
 import { AtlasLogo } from '@atlascode/frontend-icons';
+import React from 'react';
+
+export type MenuItem = {
+  action: (...args: unknown[]) => void;
+  label: string;
+};
 
 /* eslint-disable-next-line */
-export interface HeaderProps extends BoxProps<typeof Paper> {}
+export interface HeaderProps extends BoxProps<typeof Paper> {
+  menuItems: MenuItem[];
+  callToActionButton: MenuItem;
+}
 
-export function Header({ sx, elevation = 1, ...rest }: HeaderProps) {
+export function Header({
+  sx,
+  elevation = 1,
+  menuItems = [],
+  callToActionButton = {
+    action: () => console.log('Button was clicked'),
+    label: 'Faça seu orçamento',
+  },
+  ...rest
+}: HeaderProps) {
   const defaultStylesMemoized = useMemoizedMergedObject(defaultStyles(), sx);
 
   return (
@@ -21,11 +39,31 @@ export function Header({ sx, elevation = 1, ...rest }: HeaderProps) {
           <AtlasLogo className="logo" />
         </Box>
 
-        <Box className="menu-items-container"></Box>
+        <Box className="menu-items-container">
+          {menuItems &&
+            menuItems.map(({ action, label }, index) => {
+              return (
+                <Button
+                  variant="text"
+                  className="menu-item"
+                  key={index}
+                  onClick={action}
+                  color="secondary"
+                >
+                  {label}
+                </Button>
+              );
+            })}
+        </Box>
 
         <Box className="cta-container">
-          <Button className="cta-button" variant="outlined" color="primary">
-            Faça seu orçamento
+          <Button
+            className="cta-button"
+            onClick={callToActionButton.action}
+            variant="outlined"
+            color="primary"
+          >
+            {callToActionButton.label}
           </Button>
         </Box>
       </Box>
@@ -56,24 +94,50 @@ const defaultStyles = () => {
 
     '.logo-container': {
       display: 'flex',
-      justifyContent: 'center',
+      justifyContent: 'flex-start',
       alignItems: 'center',
-      px: 1,
+      pl: 2.5,
+
+      '@media (min-width: 1024px)': {
+        justifyContent: 'center',
+        px: 1,
+        pl: 0,
+      },
     },
 
     '.logo': {
-      width: '19em',
+      width: '14em',
       height: 'auto',
+
+      '@media (min-width: 1024px)': {
+        width: '19em',
+      },
     },
 
     '.menu-items-container': {
-      display: 'flex',
+      alignItems: 'center',
+      display: 'none',
+      justifyContent: 'center',
+      gap: 2,
+
+      '@media (min-width: 1024px)': {
+        display: 'flex',
+      },
+    },
+
+    '.menu-item': {
+      fontSize: '1.75em',
+      height: 'fit-content',
     },
 
     '.cta-container': {
-      display: 'flex',
+      display: 'none',
       justifyContent: 'center',
       alignItems: 'center',
+
+      '@media (min-width: 1024px)': {
+        display: 'flex',
+      },
     },
 
     '.cta-button': {
