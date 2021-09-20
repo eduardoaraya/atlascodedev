@@ -2,16 +2,32 @@ import { useMemoizedMergedObject } from '@atlascode/frontend-hooks';
 import { Box, BoxProps, Theme } from '@mui/material';
 import { SxProps } from '@mui/system';
 /* eslint-disable-next-line */
-export interface ProjectItemProps extends BoxProps {}
+export interface ProjectItemProps extends BoxProps {
+  inverted?: boolean;
+}
 
-export function ProjectItem({ sx, ...rest }: ProjectItemProps) {
-  const defaultStylesMemo = useMemoizedMergedObject(defaultStyles(), sx);
+export function ProjectItem({
+  sx,
+  inverted = false,
+  ...rest
+}: ProjectItemProps) {
+  const defaultStylesMemo = useMemoizedMergedObject(
+    defaultStyles(inverted),
+    sx,
+    [inverted]
+  );
 
-  return <Box sx={defaultStylesMemo} {...rest}></Box>;
+  return (
+    <Box sx={defaultStylesMemo} {...rest}>
+      <Box className="AtlasCode-ProjectItem-root"></Box>
+    </Box>
+  );
 }
 
 export default ProjectItem;
 
-const defaultStyles = () => {
-  return {} as SxProps<Theme>;
+const defaultStyles = (inverted = false) => {
+  return {
+    '.AtlasCode-ProjectItem-root': {},
+  } as SxProps<Theme>;
 };
