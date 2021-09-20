@@ -19,10 +19,9 @@ export function ProjectsSection({
     <Box {...rest} sx={defaultStylesMemo}>
       <Box className="AtlasCode-ProjectsSection-root">
         <Box className="AtlasCode-ProjectsSection-container">
-          <Typography
-            className="AtlasCode-ProjectsSection-title"
-            variant="h2"
-          ></Typography>
+          <Typography className="AtlasCode-ProjectsSection-title" variant="h2">
+            Projetos
+          </Typography>
 
           <Box className="AtlasCode-ProjectsSection-project-list">
             {projects.map(
@@ -67,15 +66,16 @@ const defaultStyles = () => {
       },
 
       '.AtlasCode-ProjectsSection-title': {
-        fontSize: { xs: '2.4em', lg: '3.8em' },
+        fontSize: { xs: '2.8em', lg: '4.2em' },
         fontWeight: 900,
-        py: { xs: 5 },
+        mb: { xs: 6.5, lg: 13 },
+        textAlign: 'center',
       },
 
       '.AtlasCode-ProjectsSection-project-list': {
         display: 'flex',
         flexDirection: 'column',
-        gap: { xs: 0, lg: 20 },
+        gap: { xs: 10, lg: 20 },
       },
     },
   } as SxProps<Theme>;
