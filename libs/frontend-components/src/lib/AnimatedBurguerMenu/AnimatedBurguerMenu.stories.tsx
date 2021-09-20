@@ -1,17 +1,29 @@
 import { Story, Meta } from '@storybook/react';
-import {
-  AnimatedBurguerMenu,
-  AnimatedBurguerMenuProps,
-} from './AnimatedBurguerMenu';
+import { AnimatedBurguerMenu, KotaBurguerProps } from './AnimatedBurguerMenu';
 
 export default {
   component: AnimatedBurguerMenu,
-  title: 'AnimatedBurguerMenu',
+  title: 'Unstable/Burguer - Kota',
+  decorators: [
+    (Story) => (
+      <div
+        style={{
+          fontSize: '22px',
+          margin: '25px',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
 } as Meta;
 
-const Template: Story<AnimatedBurguerMenuProps> = (args) => (
+const Template: Story<KotaBurguerProps> = (args) => (
   <AnimatedBurguerMenu {...args} />
 );
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+  colorClosed: '#002946',
+  colorOpen: '#F5B63B',
+};
