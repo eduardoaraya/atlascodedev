@@ -1,5 +1,10 @@
 import { Box, BoxProps } from '@mui/material';
-import { CodeIcon, CogIcon, MoneyIcon } from '@atlascode/frontend-svgs';
+import {
+  CodeIcon,
+  CogIcon,
+  GraphIcon,
+  MoneyIcon,
+} from '@atlascode/frontend-svgs';
 import PathIcon from '../PathIcon/PathIcon';
 import CloudIcon from '../CloudIcon/CloudIcon';
 
@@ -9,7 +14,7 @@ export interface DefenseCardProps extends BoxProps {}
 export function DefenseCard(props: DefenseCardProps) {
   return (
     <Box sx={{ bgcolor: (theme) => theme.palette.secondary.main }}>
-      <CogIcon sx={{ width: '50px', height: 'auto' }} />
+      <GraphIcon sx={{ width: '50px', height: 'auto' }} />
     </Box>
   );
 }
