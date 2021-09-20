@@ -1,7 +1,7 @@
 import { SxProps } from '@mui/system';
 import { Box, BoxProps, Button, Paper, Theme } from '@mui/material';
 import { useMemoizedMergedObject } from '@atlascode/frontend-hooks';
-import { AtlasLogo } from '@atlascode/frontend-icons';
+import { AtlasLogo } from '@atlascode/frontend-svgs';
 import React from 'react';
 import AnimatedBurguerMenu, {
   KotaBurguerProps,

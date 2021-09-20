@@ -1,9 +1,9 @@
 module.exports = {
-  displayName: 'frontend-icons',
+  displayName: 'frontend-svgs',
   preset: '../../jest.preset.js',
   transform: {
     '^.+\\.[tj]sx?$': 'babel-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/libs/frontend-icons',
+  coverageDirectory: '../../coverage/libs/frontend-svgs',
 };

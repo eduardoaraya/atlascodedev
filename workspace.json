@@ -215,23 +215,23 @@
         }
       }
     },
-    "frontend-icons": {
-      "root": "libs/frontend-icons",
-      "sourceRoot": "libs/frontend-icons/src",
+    "frontend-svgs": {
+      "root": "libs/frontend-svgs",
+      "sourceRoot": "libs/frontend-svgs/src",
       "projectType": "library",
       "targets": {
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": ["libs/frontend-icons/**/*.{ts,tsx,js,jsx}"]
+            "lintFilePatterns": ["libs/frontend-svgs/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/frontend-icons"],
+          "outputs": ["coverage/libs/frontend-svgs"],
           "options": {
-            "jestConfig": "libs/frontend-icons/jest.config.js",
+            "jestConfig": "libs/frontend-svgs/jest.config.js",
             "passWithNoTests": true
           }
         },
@@ -241,7 +241,7 @@
             "uiFramework": "@storybook/react",
             "port": 4400,
             "config": {
-              "configFolder": "libs/frontend-icons/.storybook"
+              "configFolder": "libs/frontend-svgs/.storybook"
             }
           },
           "configurations": {
@@ -255,9 +255,9 @@
           "outputs": ["{options.outputPath}"],
           "options": {
             "uiFramework": "@storybook/react",
-            "outputPath": "dist/storybook/frontend-icons",
+            "outputPath": "dist/storybook/frontend-svgs",
             "config": {
-              "configFolder": "libs/frontend-icons/.storybook"
+              "configFolder": "libs/frontend-svgs/.storybook"
             }
           },
           "configurations": {
