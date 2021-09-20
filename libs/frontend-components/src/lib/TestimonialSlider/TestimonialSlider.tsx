@@ -6,6 +6,8 @@ import { Box, BoxProps, Theme, Typography } from '@mui/material';
 import { SxProps } from '@mui/system';
 import { Property } from 'csstype';
 import { useTestimonialSlider } from './useTestimonialSlider';
+import { MotionBox } from '@atlascode/frontend-utility';
+import { motion } from 'framer-motion';
 
 /* eslint-disable-next-line */
 export interface TestimonialSliderProps extends BoxProps {
@@ -25,7 +27,7 @@ export function TestimonialSlider({
   testimonials = [],
   ...rest
 }: TestimonialSliderProps) {
-  const { activeTestimonial, backwards, forward } =
+  const { activeTestimonial, backwards, forward, activeIndex } =
     useTestimonialSlider(testimonials);
 
   const defaultStylesMemo = useMemoizedMergedObject(
@@ -58,14 +60,29 @@ export function TestimonialSlider({
 
           <Box className="grid">
             <Box className="picture-container">
-              <Box
-                component="img"
+              <motion.img
+                key={activeIndex}
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
                 src={activeTestimonial.logo}
                 className="picture"
               />
             </Box>
 
-            <Box className="text-container">
+            <MotionBox
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {
+                  opacity: 0,
+                },
+                visible: {
+                  opacity: 1,
+                },
+              }}
+              className="text-container"
+              key={activeIndex}
+            >
               <Typography variant="subtitle1" className="testimonial">
                 {activeTestimonial.testimonial}
               </Typography>
@@ -83,7 +100,7 @@ export function TestimonialSlider({
                   {activeTestimonial.testimonialCompany}
                 </Typography>
               </Box>
-            </Box>
+            </MotionBox>
           </Box>
         </Box>
       )}
@@ -131,6 +148,7 @@ const defaultStyles = (bgcolor: Property.BackgroundColor = '#333') => {
       },
 
       '.picture-container': {
+        transition: 'background-color 0.5s ease',
         width: '100%',
         height: '100%',
         display: 'flex',

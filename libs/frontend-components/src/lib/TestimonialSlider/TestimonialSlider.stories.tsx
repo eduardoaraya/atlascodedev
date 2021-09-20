@@ -41,7 +41,7 @@ Primary.args = {
       bgcolor: '#1C3664',
       logo: './images/procidadania.png',
       testimonial:
-        'Só tenho a agradecer ao atendimento prestado pelo Atlas Code. Foram atenciosos do começo ao fim do projeto e me auxiliaram em diversas dúvida sobre negócios digitais. ',
+        'Só tenho a agradecer ao atendim3232323ento prestado pelo Atlas Code. Foram atenciosos do começo ao fim do projeto e me auxiliaram em diversas dúvida sobre negócios digitais. ',
       testimonialName: 'Vanessa Sanchez',
       testimonialCompany: 'Pro Cidadania Org',
     },

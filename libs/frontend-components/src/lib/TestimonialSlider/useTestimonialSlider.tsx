@@ -37,5 +37,6 @@ export function useTestimonialSlider(testimonialList: TestimonialSliderItem[]) {
     activeTestimonial: activeTestimonial,
     forward: forwardCallback,
     backwards: backwardsCallback,
+    activeIndex: activeIndex,
   };
 }
