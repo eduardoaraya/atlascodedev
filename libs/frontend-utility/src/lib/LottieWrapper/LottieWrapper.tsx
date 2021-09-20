@@ -20,7 +20,7 @@ export type LottieAnimationItem = ReturnType<
   typeof lottie.default.loadAnimation
 >;
 
-const LottieAnimation = ({
+export const LottieAnimation = ({
   animationData,
   height = 300,
   width = 300,
