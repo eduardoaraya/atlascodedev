@@ -1,3 +1,4 @@
+export * from './lib/FramerLogo/FramerLogo';
 export * from './lib/NestLogo/NestLogo';
 export * from './lib/TypescriptLogo/TypescriptLogo';
 export * from './lib/GatsbyLogo/GatsbyLogo';

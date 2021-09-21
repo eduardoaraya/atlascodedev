@@ -7,6 +7,7 @@ import 'swiper/swiper.min.css';
 import TechnologyCard from './TechnologyCard';
 import {
   FigmaLogo,
+  FramerLogo,
   GatsbyLogo,
   NestLogo,
   NextLogo,
@@ -26,6 +27,7 @@ const TECHNOLOGIES: Array<{ name: string; icon: React.FC<unknown> }> = [
   { name: 'NodeJS', icon: NodeLogo },
   { name: 'Typescript', icon: TypescriptLogo },
   { name: 'NestJS', icon: NestLogo },
+  { name: 'Framer', icon: FramerLogo },
 ];
 
 /* eslint-disable-next-line */
