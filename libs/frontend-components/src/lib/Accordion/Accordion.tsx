@@ -3,22 +3,18 @@ import { MotionBox } from '@atlascode/frontend-utility';
 import { Box, BoxProps, Theme, Typography } from '@mui/material';
 import { SxProps } from '@mui/system';
 import AccordionChevron from './AccordionChevron';
+import React from 'react';
 
 /* eslint-disable-next-line */
 export interface AccordionProps extends BoxProps {
-  open: boolean;
   title: string;
   content: string;
 }
 
-export function Accordion({
-  sx,
-  open = false,
-  content,
-  title,
-  ...rest
-}: AccordionProps) {
+export function Accordion({ sx, content, title, ...rest }: AccordionProps) {
   const defaultStylesMemo = useMemoizedMergedObject(defaultStyles(), sx);
+
+  const [accordionOpen, setAccordionOpen] = React.useState<boolean>(false);
 
   return (
     <Box sx={defaultStylesMemo} {...rest}>
@@ -29,13 +25,16 @@ export function Accordion({
           </Typography>
 
           <Box className="chevron">
-            <AccordionChevron open={open} />
+            <AccordionChevron
+              onClick={() => setAccordionOpen((prevState) => !prevState)}
+              open={accordionOpen}
+            />
           </Box>
         </Box>
 
         <MotionBox
           initial="closed"
-          animate={open ? 'open' : 'closed'}
+          animate={accordionOpen ? 'open' : 'closed'}
           className="content"
           variants={{
             closed: {
