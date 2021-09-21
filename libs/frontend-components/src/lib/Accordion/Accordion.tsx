@@ -40,15 +40,17 @@ export function Accordion({
           variants={{
             closed: {
               maxHeight: 0,
-              paddingTop: 0,
-              paddingBottom: 0,
+              paddingTop: '0px',
+              paddingBottom: '0px',
               opacity: 0,
+              overflow: 'hidden',
             },
             open: {
-              maxHeight: 1500,
-              paddingTop: 50,
-              paddingBottom: 50,
+              maxHeight: 500,
+              paddingTop: '50px',
+              paddingBottom: '50px',
               opacity: 1,
+              overflow: 'visible',
             },
           }}
         >
