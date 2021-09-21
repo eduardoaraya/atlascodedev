@@ -52,6 +52,7 @@ const defaultStyles = () => {
         alignItems: 'center',
         flexDirection: 'column',
         height: '100%',
+        gap: 2,
       },
 
       '.AtlasCode-TechnologyCard-icon': {
