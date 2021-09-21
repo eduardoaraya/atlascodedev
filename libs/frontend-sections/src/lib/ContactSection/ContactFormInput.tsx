@@ -9,7 +9,7 @@ const ContactFormInput = ({
   component = InputBase,
   ...rest
 }: ContactFormInputProps) => {
-  return <Box component={InputBase} sx={styles.root} {...rest} />;
+  return <Box component={InputBase} sx={{ ...sx, ...styles.root }} {...rest} />;
 };
 
 export default ContactFormInput;

@@ -11,10 +11,13 @@ const ContactForm = ({ sx, ...rest }: ContactFormProps) => {
   return (
     <Box sx={{ ...sx, ...styles.root }} {...rest}>
       <Box sx={styles.container}>
-        <ContactFormInputFull placeholder="Hello world" />
-        <ContactFormInputFull placeholder="Aloha hermanos" />
-        <ContactFormInputFull />
-        <ContactFormInputFull rows={4} multiline />
+        <ContactFormInputFull sx={styles.nameField} placeholder="Hello world" />
+        <ContactFormInputFull
+          sx={styles.phoneField}
+          placeholder="Aloha hermanos"
+        />
+        <ContactFormInputFull sx={styles.emailField} />
+        <ContactFormInputFull sx={styles.messageField} rows={6} multiline />
       </Box>
     </Box>
   );
@@ -38,7 +41,11 @@ const styles = AtlasStylesheet.create({
 
   nameField: {},
   phoneField: {},
-  emailField: {},
-  messageField: {},
+  emailField: {
+    gridColumn: '1/3',
+  },
+  messageField: {
+    gridColumn: '1/3',
+  },
   submitButton: {},
 });

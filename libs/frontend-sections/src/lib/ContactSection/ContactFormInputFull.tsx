@@ -16,6 +16,7 @@ export interface ContactFormInputFull extends ContactFormInputProps {
 
 const ContactFormInputFull = ({
   label = 'Placeholder label',
+  sx,
   ...rest
 }: ContactFormInputFull) => {
   const labelId = React.useRef(
@@ -23,7 +24,7 @@ const ContactFormInputFull = ({
   );
 
   return (
-    <FormControl sx={styles.formControl} variant="standard">
+    <FormControl sx={{ ...sx, ...styles.formControl }} variant="standard">
       <Box sx={styles.label} component="label" htmlFor={labelId.current}>
         {label}
       </Box>
