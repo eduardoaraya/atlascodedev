@@ -2,7 +2,7 @@ import React from 'react';
 import { AtlasStylesheet } from '@atlascode/frontend-helpers';
 import { BoxProps, InputBase, Box } from '@mui/material';
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface ContactFormInputProps extends BoxProps<typeof InputBase> {}
+export interface ContactFormInputProps extends BoxProps<typeof InputBase> {}
 
 const ContactFormInput = ({
   sx,

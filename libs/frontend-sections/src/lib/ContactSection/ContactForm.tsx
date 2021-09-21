@@ -2,6 +2,7 @@ import { BoxProps, Box, TextField } from '@mui/material';
 import React from 'react';
 import { AtlasStylesheet } from '@atlascode/frontend-helpers';
 import ContactFormInput from './ContactFormInput';
+import ContactFormInputFull from './ContactFormInputFull';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface ContactFormProps extends BoxProps {}
@@ -10,34 +11,10 @@ const ContactForm = ({ sx, ...rest }: ContactFormProps) => {
   return (
     <Box sx={{ ...sx, ...styles.root }} {...rest}>
       <Box sx={styles.container}>
-        {/* <TextField
-          variant="outlined"
-          sx={styles.nameField}
-          label="placeholder"
-          placeholder="placeholder"
-        /> */}
-        <ContactFormInput />
-
-        <TextField
-          variant="outlined"
-          sx={styles.phoneField}
-          label="placeholder"
-          placeholder="placeholder"
-        />
-
-        <TextField
-          variant="outlined"
-          sx={styles.emailField}
-          label="placeholder"
-          placeholder="placeholder"
-        />
-
-        <TextField
-          variant="outlined"
-          sx={styles.messageField}
-          label="placeholder"
-          placeholder="placeholder"
-        />
+        <ContactFormInputFull placeholder="Hello world" />
+        <ContactFormInputFull placeholder="Aloha hermanos" />
+        <ContactFormInputFull />
+        <ContactFormInputFull />
       </Box>
     </Box>
   );
