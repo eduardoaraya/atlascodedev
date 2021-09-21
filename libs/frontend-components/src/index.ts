@@ -1,3 +1,4 @@
+export * from './lib/WorkflowCard/WorkflowCard';
 export * from './lib/EmployeeCard/EmployeeCard';
 export * from './lib/EmployeeCard/EmployeeCard';
 export * from './lib/Accordion/Accordion';
