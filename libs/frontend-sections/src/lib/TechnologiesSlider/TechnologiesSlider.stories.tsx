@@ -3,9 +3,12 @@ import {
   TechnologiesSlider,
   TechnologiesSliderProps,
 } from './TechnologiesSlider';
+import TechnologySliderSection, {
+  TechnologySliderSectionProps,
+} from './TechnologySliderSection';
 
 export default {
-  component: TechnologiesSlider,
+  component: TechnologySliderSection,
   title: 'TechnologiesSlider',
   parameters: {
     layout: 'fullscreen',
@@ -15,8 +18,8 @@ export default {
   },
 } as Meta;
 
-const Template: Story<TechnologiesSliderProps> = (args) => (
-  <TechnologiesSlider {...args} />
+const Template: Story<TechnologySliderSectionProps> = (args) => (
+  <TechnologySliderSection {...args} />
 );
 
 export const Primary = Template.bind({});

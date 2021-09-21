@@ -32,7 +32,7 @@ const TECHNOLOGIES: Array<{ name: string; icon: React.FC<unknown> }> = [
 
 /* eslint-disable-next-line */
 export interface TechnologiesSliderProps extends BoxProps {
-  technologies: Array<{ name: string; icon: React.FC<unknown> }>;
+  technologies?: Array<{ name: string; icon: React.FC<unknown> }>;
 }
 
 export function TechnologiesSlider({ sx, ...rest }: TechnologiesSliderProps) {
