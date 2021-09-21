@@ -48,7 +48,7 @@ const defaultStyles = () => {
     '.AtlasCode-EmployeeCard-root': {
       fontSize: '10px',
       width: { xs: '15em', lg: '24em' },
-      height: { xs: '14em', lg: '27em' },
+      height: { xs: '14em', lg: '24em' },
       borderRadius: '6px',
       position: 'relative',
       boxShadow: (theme) => theme.shadows[3],
