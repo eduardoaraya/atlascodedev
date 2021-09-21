@@ -1,3 +1,4 @@
+export * from './lib/Accordion/Accordion';
 export * from './lib/TestimonialSlider/TestimonialSlider';
 export * from './lib/ProjectItem/ProjectItem';
 export * from './lib/CloudIcon/CloudIcon';
