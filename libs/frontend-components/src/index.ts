@@ -1,3 +1,5 @@
+export * from './lib/EmployeeCard/EmployeeCard';
+export * from './lib/EmployeeCard/EmployeeCard';
 export * from './lib/Accordion/Accordion';
 export * from './lib/TestimonialSlider/TestimonialSlider';
 export * from './lib/ProjectItem/ProjectItem';
