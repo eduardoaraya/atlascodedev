@@ -1,3 +1,4 @@
+export * from './lib/AboutUsHero/AboutUsHero';
 export * from './lib/TechnologiesSlider/TechnologiesSlider';
 export * from './lib/FAQ/FAQ';
 export * from './lib/ProjectsSection/ProjectsSection';
