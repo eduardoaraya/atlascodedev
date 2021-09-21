@@ -162,6 +162,28 @@
         }
       }
     },
+    "frontend-helpers": {
+      "root": "libs/frontend-helpers",
+      "sourceRoot": "libs/frontend-helpers/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/frontend-helpers/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/frontend-helpers"],
+          "options": {
+            "jestConfig": "libs/frontend-helpers/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "frontend-hooks": {
       "root": "libs/frontend-hooks",
       "sourceRoot": "libs/frontend-hooks/src",
@@ -315,6 +337,7 @@
           "options": {
             "uiFramework": "@storybook/react",
             "port": 4400,
+            "staticDir": ["apps/frontend/public"],
             "config": {
               "configFolder": "libs/frontend-sections/.storybook"
             }
