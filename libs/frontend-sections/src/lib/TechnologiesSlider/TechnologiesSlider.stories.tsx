@@ -7,6 +7,12 @@ import {
 export default {
   component: TechnologiesSlider,
   title: 'TechnologiesSlider',
+  parameters: {
+    layout: 'fullscreen',
+    viewport: {
+      defaultViewport: 'brazilDesktop1',
+    },
+  },
 } as Meta;
 
 const Template: Story<TechnologiesSliderProps> = (args) => (

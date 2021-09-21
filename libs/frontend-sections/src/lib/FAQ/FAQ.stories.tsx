@@ -4,6 +4,12 @@ import { FAQ, FAQProps } from './FAQ';
 export default {
   component: FAQ,
   title: 'FAQ',
+  parameters: {
+    layout: 'fullscreen',
+    viewport: {
+      defaultViewport: 'brazilDesktop1',
+    },
+  },
 } as Meta;
 
 const Template: Story<FAQProps> = (args) => <FAQ {...args} />;

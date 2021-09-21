@@ -8,9 +8,11 @@ import TechnologyCard from './TechnologyCard';
 import {
   FigmaLogo,
   GatsbyLogo,
+  NestLogo,
   NextLogo,
   NodeLogo,
   ReactLogo,
+  TypescriptLogo,
 } from '@atlascode/frontend-svgs';
 import React from 'react';
 
@@ -22,6 +24,8 @@ const TECHNOLOGIES: Array<{ name: string; icon: React.FC<unknown> }> = [
   { name: 'ReactJS', icon: ReactLogo },
   { name: 'GatsbyJS', icon: GatsbyLogo },
   { name: 'NodeJS', icon: NodeLogo },
+  { name: 'Typescript', icon: TypescriptLogo },
+  { name: 'NestJS', icon: NestLogo },
 ];
 
 /* eslint-disable-next-line */
