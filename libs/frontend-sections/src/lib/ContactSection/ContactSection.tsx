@@ -1,6 +1,5 @@
 import { AtlasStylesheet } from '@atlascode/frontend-helpers';
-import { useMemoizedMergedObject } from '@atlascode/frontend-hooks';
-import { Box, BoxProps, Container } from '@mui/material';
+import { Box, BoxProps, Container, Typography } from '@mui/material';
 import ContactForm from './ContactForm';
 import ContactInfo from './ContactInfo';
 /* eslint-disable-next-line */
@@ -15,6 +14,10 @@ export function ContactSection({ sx, ...rest }: ContactSectionProps) {
             <ContactInfo />
           </Box>
           <Box sx={styles.formContainer}>
+            <Typography sx={styles.title} variant="h2">
+              Entre em contato
+            </Typography>
+
             <ContactForm />
           </Box>
         </Box>
@@ -37,6 +40,14 @@ const styles = AtlasStylesheet.create({
     gridTemplateColumns: { xs: '1fr', lg: '50% 50%' },
     gridAutoFlow: 'row',
     rowGap: { xs: 10 },
+  },
+
+  title: {
+    fontSize: { xs: '2.6em' },
+    color: (theme) => theme.palette.secondary.main,
+    fontWeight: 900,
+    pb: { xs: '1em' },
+    mt: { xs: '1.5em' },
   },
 
   formContainer: {
