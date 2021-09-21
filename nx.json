@@ -42,6 +42,9 @@
     "frontend-forms": {
       "tags": []
     },
+    "frontend-helpers": {
+      "tags": []
+    },
     "frontend-hooks": {
       "tags": []
     },
