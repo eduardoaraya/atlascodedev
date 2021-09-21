@@ -94,12 +94,16 @@ const defaultStyles = () => {
         fontSize: { xs: '3.2em' },
         color: (theme) => theme.palette.secondary.main,
         fontWeight: 900,
+        textAlign: 'center',
+        py: { xs: 3, lg: 4 },
       },
 
       '.accordion-container': {
         display: 'flex',
         flexDirection: 'column',
         width: '100%',
+        gap: { xs: '1em', lg: '2em' },
+        px: { lg: 30 },
       },
     },
   } as SxProps<Theme>;
