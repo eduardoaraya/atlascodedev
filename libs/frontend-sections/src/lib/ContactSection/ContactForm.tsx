@@ -72,5 +72,7 @@ const styles = AtlasStylesheet.create({
   messageField: {
     gridColumn: { lg: '1/3' },
   },
-  submitButton: {},
+  submitButton: {
+    fontSize: { xs: '2em' },
+  },
 });
