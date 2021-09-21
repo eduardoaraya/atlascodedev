@@ -14,7 +14,7 @@ const ContactForm = ({ sx, ...rest }: ContactFormProps) => {
         <ContactFormInputFull placeholder="Hello world" />
         <ContactFormInputFull placeholder="Aloha hermanos" />
         <ContactFormInputFull />
-        <ContactFormInputFull />
+        <ContactFormInputFull rows={4} multiline />
       </Box>
     </Box>
   );

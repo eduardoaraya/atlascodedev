@@ -19,7 +19,7 @@ const styles = AtlasStylesheet.create({
     borderRadius: '6px',
     fontSize: { xs: '14px' },
     border: (theme) => `1px solid ${theme.palette.secondary.light}`,
-    height: '55px',
+    minHeight: '55px',
     transition: 'all 0.3s ease',
     position: 'relative',
 
@@ -55,6 +55,11 @@ const styles = AtlasStylesheet.create({
 
     '& input': {
       px: { xs: 1.5 },
+    },
+
+    '& textarea': {
+      px: { xs: 1.5 },
+      py: { xs: 1 },
     },
   },
 });
