@@ -1,23 +1,48 @@
-import { BoxProps, Box, TextField } from '@mui/material';
+import { BoxProps, Box, Button, ButtonProps } from '@mui/material';
 import React from 'react';
 import { AtlasStylesheet } from '@atlascode/frontend-helpers';
-import ContactFormInput from './ContactFormInput';
+import ContactFormInput, { ContactFormInputProps } from './ContactFormInput';
 import ContactFormInputFull from './ContactFormInputFull';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface ContactFormProps extends BoxProps {}
+interface ContactFormProps extends BoxProps {
+  NameInputProps?: ContactFormInputProps;
+  PhoneInputProps?: ContactFormInputProps;
+  EmailInputProps?: ContactFormInputProps;
+  MessageInputProps?: ContactFormInputProps;
+  ButtonProps?: ButtonProps;
+}
 
-const ContactForm = ({ sx, ...rest }: ContactFormProps) => {
+const ContactForm = ({
+  sx,
+  NameInputProps,
+  PhoneInputProps,
+  EmailInputProps,
+  MessageInputProps,
+  ButtonProps,
+  ...rest
+}: ContactFormProps) => {
   return (
     <Box sx={{ ...sx, ...styles.root }} {...rest}>
       <Box sx={styles.container}>
-        <ContactFormInputFull sx={styles.nameField} placeholder="Hello world" />
+        <ContactFormInputFull {...NameInputProps} sx={styles.nameField} />
+        <ContactFormInputFull {...PhoneInputProps} sx={styles.phoneField} />
+        <ContactFormInputFull {...EmailInputProps} sx={styles.emailField} />
         <ContactFormInputFull
-          sx={styles.phoneField}
-          placeholder="Aloha hermanos"
+          {...MessageInputProps}
+          sx={styles.messageField}
+          rows={6}
+          multiline
         />
-        <ContactFormInputFull sx={styles.emailField} />
-        <ContactFormInputFull sx={styles.messageField} rows={6} multiline />
+        <Button
+          {...ButtonProps}
+          sx={styles.submitButton}
+          size="small"
+          variant="contained"
+          color="primary"
+        >
+          Enviar
+        </Button>
       </Box>
     </Box>
   );
@@ -42,10 +67,10 @@ const styles = AtlasStylesheet.create({
   nameField: {},
   phoneField: {},
   emailField: {
-    gridColumn: '1/3',
+    gridColumn: { lg: '1/3' },
   },
   messageField: {
-    gridColumn: '1/3',
+    gridColumn: { lg: '1/3' },
   },
   submitButton: {},
 });
