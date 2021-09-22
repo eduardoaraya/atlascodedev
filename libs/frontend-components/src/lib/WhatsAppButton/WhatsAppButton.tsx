@@ -62,6 +62,7 @@ const stylesClass = (color: 'primary' | 'secondary' = 'primary') =>
       bgcolor: (theme) => theme.palette[color].main,
       borderRadius: '0px 10px 10px 0px',
       cursor: 'pointer',
+      fontSize: { xs: '10px', lg: '12px' },
     },
 
     container: {
