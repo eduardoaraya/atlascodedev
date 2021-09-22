@@ -1,3 +1,4 @@
+export * from './lib/CloudPitchSection/CloudPitchSection';
 export * from './lib/OurServicesMobile/OurServicesMobile';
 export * from './lib/OurServicesDesktop/OurServicesDesktop';
 export * from './lib/WorkflowSection/WorkflowSection';
