@@ -15,7 +15,7 @@ export function OurServicesItem({
   sx,
   active = false,
   fillTime = 0.5,
-  onFillTimeEnd = () => alert('Fill time has ended'),
+  onFillTimeEnd = () => _.noop(),
   ...rest
 }: OurServicesItemProps) {
   const theme = useTheme();
@@ -108,7 +108,7 @@ const stylesFn = (active: boolean, fillTime = 0.5) =>
         left: 0,
         opacity: 0,
         bgcolor: (theme) => theme.palette.primary.main,
-        transition: `opacity 0.25s ease, width 0.25s ease`,
+        transition: `opacity 0.5s ease, width 0.5s ease`,
         ...(active && {
           width: '100%',
           opacity: 1,
