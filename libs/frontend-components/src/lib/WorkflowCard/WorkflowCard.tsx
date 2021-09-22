@@ -66,6 +66,7 @@ const styles = AtlasStylesheet.create({
     borderRadius: '10px',
     border: (theme) => `3px solid ${theme.palette.secondary.main}`,
     p: { xs: '1.5em 2em', lg: '3.8em 3.8em' },
+    bgcolor: (theme) => theme.palette.secondary.contrastText,
   },
   container: {
     display: 'flex',

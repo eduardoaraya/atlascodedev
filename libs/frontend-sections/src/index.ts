@@ -1,3 +1,4 @@
+export * from './lib/WorkflowSection/WorkflowSection';
 export * from './lib/ContactSection/ContactSection';
 export * from './lib/AssociatesSection/AssociatesSection';
 export * from './lib/AboutUsHero/AboutUsHero';
