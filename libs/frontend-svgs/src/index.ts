@@ -1,3 +1,5 @@
+export * from './lib/GoogleCloudLogo/GoogleCloudLogo';
+export * from './lib/GoogleCloudLogo/GoogleCloudLogo';
 export * from './lib/AWSLogo/AWSLogo';
 export * from './lib/AdvertisementIcon/AdvertisementIcon';
 export * from './lib/SocialMediaIcon/SocialMediaIcon';
