@@ -1,4 +1,4 @@
-import { Box, BoxProps, Container } from '@mui/material';
+import { Box, BoxProps, Container, Typography } from '@mui/material';
 import { AtlasStylesheet } from '@atlascode/frontend-helpers';
 
 /* eslint-disable-next-line */
@@ -6,8 +6,17 @@ export interface OurServicesDesktopProps extends BoxProps {}
 
 export function OurServicesDesktop({ sx, ...rest }: OurServicesDesktopProps) {
   return (
-    <Box sx={styles.root}>
-      <Container sx={styles.container} maxWidth="lg"></Container>
+    <Box sx={styles.root} {...rest}>
+      <Container sx={styles.container} maxWidth="lg">
+        <Typography variant="h1" sx={styles.title}>
+          Nossos serviços
+        </Typography>
+
+        <Box sx={styles.grid}>
+          <Box sx={styles.timeItemContainer}></Box>
+          <Box sx={styles.contentContainer}></Box>
+        </Box>
+      </Container>
     </Box>
   );
 }
@@ -21,7 +30,18 @@ const styles = AtlasStylesheet.create({
     bgcolor: (theme) => theme.palette.secondary.main,
   },
 
-  container: {},
+  timeItemContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: { xs: 2 },
+  },
+
+  contentContainer: {},
+
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
 
   title: {
     fontSize: { xs: '3.8em' },

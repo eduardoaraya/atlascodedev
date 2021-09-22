@@ -8,6 +8,8 @@ import _ from 'lodash';
 export interface OurServicesItemProps extends BoxProps {
   active?: boolean;
   fillTime?: number;
+  title?: string;
+  icon?: React.FC<unknown>;
   onFillTimeEnd?: (...args: unknown[]) => void;
 }
 
@@ -16,6 +18,8 @@ export function OurServicesItem({
   active = false,
   fillTime = 0.5,
   onFillTimeEnd = () => _.noop(),
+  title = 'Placeholder title',
+  icon: Icon = CodeIcon,
   ...rest
 }: OurServicesItemProps) {
   const theme = useTheme();
@@ -50,10 +54,11 @@ export function OurServicesItem({
               ? theme.palette.primary.main
               : theme.palette.primary.contrastText
           }
-          component={CodeIcon}
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          component={Icon as any}
         />
         <Typography variant="caption" sx={styles.title}>
-          Desenvolvimento nativo
+          {title}
         </Typography>
       </Box>
 
