@@ -76,6 +76,7 @@ export function OurServicesDesktop({ sx, ...rest }: OurServicesDesktopProps) {
               icon={CodeIcon}
               onFillTimeEnd={callback}
               onClick={() => handleClick(0)}
+              withChevron
             />
             <OurServicesItem
               active={activeItem[1]}

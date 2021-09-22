@@ -3,6 +3,8 @@ import { AtlasStylesheet } from '@atlascode/frontend-helpers';
 import { CodeIcon } from '@atlascode/frontend-svgs';
 import React from 'react';
 import _ from 'lodash';
+import { ChevronLeft } from '@mui/icons-material';
+import { MotionBox } from '@atlascode/frontend-utility';
 
 /* eslint-disable-next-line */
 export interface OurServicesItemProps extends BoxProps {
@@ -10,6 +12,7 @@ export interface OurServicesItemProps extends BoxProps {
   fillTime?: number;
   title?: string;
   icon?: React.FC<unknown>;
+  withChevron?: boolean;
   onFillTimeEnd?: (...args: unknown[]) => void;
 }
 
@@ -20,6 +23,7 @@ export function OurServicesItem({
   onFillTimeEnd = () => _.noop(),
   title = 'Placeholder title',
   icon: Icon = CodeIcon,
+  withChevron = false,
   ...rest
 }: OurServicesItemProps) {
   const theme = useTheme();
@@ -60,6 +64,23 @@ export function OurServicesItem({
         <Typography variant="caption" sx={styles.title}>
           {title}
         </Typography>
+
+        {withChevron && (
+          <MotionBox
+            initial="closed"
+            animate={active ? 'open' : 'closed'}
+            variants={{
+              open: {
+                rotate: 270,
+              },
+              closed: {
+                rotate: 90,
+              },
+            }}
+            sx={styles.chevron}
+            component={ChevronLeft}
+          />
+        )}
       </Box>
 
       <Box sx={styles.bar} />
@@ -78,6 +99,11 @@ const stylesFn = (active: boolean, fillTime = 0.5) =>
       flexDirection: 'column',
       gap: { xs: 2 },
       cursor: 'pointer',
+    },
+
+    chevron: {
+      flexGrow: 1,
+      fill: (theme) => theme.palette.secondary.contrastText,
     },
 
     titleContainer: {

@@ -1,12 +1,15 @@
-/* eslint-disable-next-line */
-export interface OurServicesMobileProps {}
+import { AtlasStylesheet } from '@atlascode/frontend-helpers';
+import { Box, BoxProps } from '@mui/material';
 
-export function OurServicesMobile(props: OurServicesMobileProps) {
-  return (
-    <div>
-      <h1>Welcome to OurServicesMobile!</h1>
-    </div>
-  );
+/* eslint-disable-next-line */
+export interface OurServicesMobileProps extends BoxProps {}
+
+export function OurServicesMobile({ sx, ...rest }: OurServicesMobileProps) {
+  return <Box sx={{ ...sx, ...styles.root }} {...rest}></Box>;
 }
 
 export default OurServicesMobile;
+
+const styles = AtlasStylesheet.create({
+  root: {},
+});
