@@ -1,3 +1,4 @@
+export * from './lib/BrandingIcon/BrandingIcon';
 export * from './lib/AboutUsHeroSVG/AboutUsHeroSVG';
 export * from './lib/FramerLogo/FramerLogo';
 export * from './lib/NestLogo/NestLogo';
