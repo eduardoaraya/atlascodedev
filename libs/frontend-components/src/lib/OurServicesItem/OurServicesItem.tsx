@@ -77,6 +77,7 @@ const stylesFn = (active: boolean, fillTime = 0.5) =>
       display: 'flex',
       flexDirection: 'column',
       gap: { xs: 2 },
+      cursor: 'pointer',
     },
 
     titleContainer: {

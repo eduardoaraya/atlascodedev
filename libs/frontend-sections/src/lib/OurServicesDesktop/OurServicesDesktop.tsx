@@ -52,6 +52,14 @@ export function OurServicesDesktop({ sx, ...rest }: OurServicesDesktopProps) {
     }
   }, [activeItem]);
 
+  const handleClick = (index: 0 | 1 | 2 | 3) => {
+    const stateList = [false, false, false, false];
+
+    stateList[index] = true;
+
+    setActiveItem(stateList);
+  };
+
   return (
     <Box sx={styles.root} {...rest}>
       <Container sx={styles.container} maxWidth="lg">
@@ -67,6 +75,7 @@ export function OurServicesDesktop({ sx, ...rest }: OurServicesDesktopProps) {
               fillTime={TRANSITION_TIME}
               icon={CodeIcon}
               onFillTimeEnd={callback}
+              onClick={() => handleClick(0)}
             />
             <OurServicesItem
               active={activeItem[1]}
@@ -74,6 +83,7 @@ export function OurServicesDesktop({ sx, ...rest }: OurServicesDesktopProps) {
               fillTime={TRANSITION_TIME}
               icon={BrandingIcon}
               onFillTimeEnd={callback}
+              onClick={() => handleClick(1)}
             />
             <OurServicesItem
               active={activeItem[2]}
@@ -81,6 +91,7 @@ export function OurServicesDesktop({ sx, ...rest }: OurServicesDesktopProps) {
               fillTime={TRANSITION_TIME}
               icon={SocialMediaIcon}
               onFillTimeEnd={callback}
+              onClick={() => handleClick(2)}
             />
             <OurServicesItem
               active={activeItem[3]}
@@ -88,12 +99,21 @@ export function OurServicesDesktop({ sx, ...rest }: OurServicesDesktopProps) {
               title="Anúncios"
               icon={AdvertisementIcon}
               onFillTimeEnd={callback}
+              onClick={() => handleClick(3)}
             />
           </Box>
           <MotionBox sx={styles.contentContainer}>
-            <Typography variant="caption" sx={styles.content}>
+            <MotionBox
+              key={indexOf(activeItem, true)}
+              initial={{ opacity: 0, y: 150 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 1.5,
+              }}
+              sx={styles.content}
+            >
               {CONTENT_LIST[indexOf(activeItem, true)]}
-            </Typography>
+            </MotionBox>
           </MotionBox>
         </Box>
       </Container>
