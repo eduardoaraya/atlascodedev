@@ -1,3 +1,5 @@
+export * from './lib/OurServicesMobile/OurServicesMobile';
+export * from './lib/OurServicesDesktop/OurServicesDesktop';
 export * from './lib/WorkflowSection/WorkflowSection';
 export * from './lib/ContactSection/ContactSection';
 export * from './lib/AssociatesSection/AssociatesSection';
