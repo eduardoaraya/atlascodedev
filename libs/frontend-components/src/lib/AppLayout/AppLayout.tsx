@@ -1,21 +1,63 @@
-import { Footer, Header, WhatsAppButton } from '@atlascode/frontend-components';
+import {
+  AtlasLoader,
+  Footer,
+  Header,
+  WhatsAppButton,
+} from '@atlascode/frontend-components';
 import { AtlasStylesheet } from '@atlascode/frontend-helpers';
 import { Box } from '@mui/material';
 import { polkaPattern } from '@atlascode/frontend-jss-mixins';
-import { HideOnScroll, ScrollBackTop } from '@atlascode/frontend-utility';
 import {
-  RenderSmoothScrollOffset,
-  ThemeSmoothScrollLayout,
-} from '@atlascode/frontend-smoothscroll';
+  HideOnScroll,
+  MotionBox,
+  ScrollBackTop,
+} from '@atlascode/frontend-utility';
 import React from 'react';
+import { AnimatePresence } from 'framer-motion';
 /* eslint-disable-next-line */
 export interface AppLayoutProps {
   children?: React.ReactNode;
 }
 
 export function AppLayout(props: AppLayoutProps) {
+  const [loader, setLoader] = React.useState<boolean>(true);
+
+  React.useEffect(() => {
+    if (typeof window !== undefined) {
+      setTimeout(() => {
+        setLoader(false);
+      }, 3500);
+    }
+  }, []);
+
   return (
     <React.Fragment>
+      <AnimatePresence>
+        {loader && (
+          <MotionBox
+            onAnimationStart={() =>
+              (window.document.body.style.overflow = 'hidden')
+            }
+            onAnimationComplete={() =>
+              (window.document.body.style.overflow = 'unset')
+            }
+            zIndex={50000}
+            position="fixed"
+            width="100%"
+            height="100%"
+            display="flex"
+            justifyContent="center"
+            top={0}
+            left={0}
+            initial="visible"
+            exit="hidden"
+            variants={{ visible: { opacity: 1 }, hidden: { opacity: 0 } }}
+          >
+            <AtlasLoader />
+          </MotionBox>
+        )}
+      </AnimatePresence>
+
       <div
         id="back-to-top-anchor"
         style={{ position: 'absolute', top: 0, left: 0 }}
@@ -41,8 +83,6 @@ export function AppLayout(props: AppLayoutProps) {
         </div>
       </HideOnScroll>
       <ScrollBackTop />
-
-      <Box sx={{ height: '150vh' }} />
       {props.children}
       <Box sx={styles.bgPattern} />
       <WhatsAppButton color="secondary" />
