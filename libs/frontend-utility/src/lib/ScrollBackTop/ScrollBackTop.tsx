@@ -7,7 +7,7 @@ export interface ScrollTopProps extends BoxProps {
   children?: React.ReactNode;
 }
 
-export const ScrollTop = (props: ScrollTopProps) => {
+export const ScrollTop = ({ sx, ...rest }: ScrollTopProps) => {
   const trigger = useScrollTrigger();
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -23,11 +23,12 @@ export const ScrollTop = (props: ScrollTopProps) => {
   return (
     <Zoom in={trigger}>
       <Box
-        sx={{ ...props.sx, ...styles.root }}
+        sx={{ ...sx, ...styles.root }}
         onClick={handleClick}
         role="presentation"
+        {...rest}
       >
-        {props.children}
+        {rest.children}
       </Box>
     </Zoom>
   );
