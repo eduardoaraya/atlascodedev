@@ -59,7 +59,7 @@ const stylesClass = (color: 'primary' | 'secondary' = 'primary') =>
       left: 0,
       width: 'auto',
       color: (theme) => theme.palette[color].contrastText,
-      bgcolor: (theme) => theme.palette[color].light,
+      bgcolor: (theme) => theme.palette[color].main,
       borderRadius: '0px 10px 10px 0px',
       cursor: 'pointer',
     },
