@@ -94,7 +94,7 @@ const stylesFn = (active: boolean, fillTime = 0.5) =>
   AtlasStylesheet.create({
     root: {
       fontSize: '10px',
-      width: { xs: '32em', lg: '41em' },
+      maxWidth: { xs: '32em', lg: '41em' },
       display: 'flex',
       flexDirection: 'column',
       gap: { xs: 2 },
