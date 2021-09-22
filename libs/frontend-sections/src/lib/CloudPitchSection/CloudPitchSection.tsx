@@ -1,4 +1,9 @@
 import { AtlasStylesheet } from '@atlascode/frontend-helpers';
+import {
+  AWSLogo,
+  CloudSectionSVG,
+  GoogleCloudLogo,
+} from '@atlascode/frontend-svgs';
 import { Box, BoxProps, Container, Typography } from '@mui/material';
 
 /* eslint-disable-next-line */
@@ -17,15 +22,20 @@ export function CloudPitchSection({ sx, ...rest }: CloudPitchSectionProps) {
             Seu negócio precisa crescer, mas os custos não. Receba milhares de
             acessos sem ter problemas com servidores ou gastos desnecessários.
           </Typography>
+
+          <Box sx={styles.cloudLogoContainer}>
+            <Box sx={styles.cloudLogo}>
+              <GoogleCloudLogo sx={styles.logo} />
+            </Box>
+
+            <Box sx={styles.cloudLogo}>
+              <AWSLogo sx={styles.logo} />
+            </Box>
+          </Box>
         </Box>
 
-        <Box sx={styles.cloudLogoContainer}>
-          <Box sx={styles.cloudLogo} />
-
-          <Box sx={styles.cloudLogo} />
-        </Box>
         <Box sx={styles.illustrationContainer}>
-          <Box sx={styles.illustration} />
+          <Box sx={styles.illustration} component={CloudSectionSVG} />
         </Box>
       </Container>
     </Box>
@@ -44,13 +54,18 @@ const styles = AtlasStylesheet.create({
   grid: {
     display: 'grid',
     gridTemplateColumns: { xs: '1fr', lg: '50% 50%' },
-    gridTemplateRows: { xs: '1fr' },
     gridAutoFlow: 'row',
     width: '100%',
     height: '100%',
+    px: { xs: 4 },
   },
 
-  textContainer: {},
+  textContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    gap: { xs: 5 },
+  },
 
   title: {
     fontSize: { xs: '2.2em', lg: '3.8em' },
@@ -62,13 +77,33 @@ const styles = AtlasStylesheet.create({
     fontSize: { xs: '1.6em', lg: '2em' },
     fontWeight: 600,
     color: (theme) => theme.palette.secondary.contrastText,
+    maxWidth: { xs: '40ch' },
   },
 
-  cloudLogoContainer: {},
+  cloudLogoContainer: {
+    display: 'flex',
+    gap: { xs: 5 },
+  },
 
-  cloudLogo: {},
+  cloudLogo: {
+    width: { xs: '12.1em', lg: '16.1em' },
+    height: { xs: '7.6em', lg: '10em' },
+    borderRadius: '12px',
+    bgcolor: (theme) => theme.palette.background.paper,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    p: 3,
+  },
 
-  illustrationContainer: {},
+  logo: {
+    width: 'auto',
+    maxHeight: '6.5em',
+  },
+
+  illustrationContainer: {
+    p: { xs: 5 },
+  },
 
   illustration: {},
 });
