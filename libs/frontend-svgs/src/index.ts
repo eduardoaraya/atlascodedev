@@ -1,3 +1,4 @@
+export * from './lib/AWSLogo/AWSLogo';
 export * from './lib/AdvertisementIcon/AdvertisementIcon';
 export * from './lib/SocialMediaIcon/SocialMediaIcon';
 export * from './lib/BrandingIcon/BrandingIcon';
