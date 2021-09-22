@@ -1,9 +1,9 @@
 import React from 'react';
-import { useScrollTrigger, Zoom, Fab, Box } from '@mui/material';
+import { useScrollTrigger, Zoom, Fab, Box, BoxProps } from '@mui/material';
 import { KeyboardArrowUp } from '@mui/icons-material';
 import { AtlasStylesheet } from '@atlascode/frontend-helpers';
 
-export interface ScrollTopProps {
+export interface ScrollTopProps extends BoxProps {
   children?: React.ReactNode;
 }
 
@@ -22,7 +22,11 @@ export const ScrollTop = (props: ScrollTopProps) => {
 
   return (
     <Zoom in={trigger}>
-      <Box sx={styles.root} onClick={handleClick} role="presentation">
+      <Box
+        sx={{ ...props.sx, ...styles.root }}
+        onClick={handleClick}
+        role="presentation"
+      >
         {props.children}
       </Box>
     </Zoom>
@@ -35,7 +39,7 @@ export interface ScrollBackTopProps extends ScrollTopProps {}
 export function ScrollBackTop(props: ScrollBackTopProps) {
   return (
     <ScrollTop {...props}>
-      <Fab color="secondary" size="small" aria-label="Scrollar para o top">
+      <Fab color="primary" size="small" aria-label="Scrollar para o top">
         <KeyboardArrowUp />
       </Fab>
     </ScrollTop>

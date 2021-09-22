@@ -28,10 +28,11 @@ export function AppLayout(props: AppLayoutProps) {
           />
         </div>
       </HideOnScroll>
+      <ScrollBackTop />
+
       <Box sx={{ height: '150vh' }} />
       {props.children}
       <Box sx={styles.bgPattern} />
-      <ScrollBackTop />
       <WhatsAppButton color="secondary" />
       <Footer />
     </Box>
