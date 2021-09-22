@@ -34,7 +34,7 @@ export function OurServicesItem({
     if (active) {
       timeoutId = setTimeout(() => {
         onFillTimeEnd();
-      }, fillTime * 1000 + 250);
+      }, fillTime * 1000);
     } else {
       _.noop();
     }
@@ -113,7 +113,7 @@ const stylesFn = (active: boolean, fillTime = 0.5) =>
         left: 0,
         opacity: 0,
         bgcolor: (theme) => theme.palette.primary.main,
-        transition: `opacity 0.5s ease, width 0.5s ease`,
+        transition: `opacity 1s ease, width 1s ease`,
         ...(active && {
           width: '100%',
           opacity: 1,
