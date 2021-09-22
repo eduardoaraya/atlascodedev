@@ -97,12 +97,11 @@ const stylesFn = (active: boolean, fillTime = 0.5) =>
       maxWidth: { xs: '32em', lg: '41em' },
       display: 'flex',
       flexDirection: 'column',
-      gap: { xs: 2 },
+      gap: { xs: '15px', lg: 2 },
       cursor: 'pointer',
     },
 
     chevron: {
-      flexGrow: 1,
       fill: (theme) => theme.palette.secondary.contrastText,
     },
 
@@ -118,6 +117,7 @@ const stylesFn = (active: boolean, fillTime = 0.5) =>
       fontWeight: 900,
       fontSize: { xs: '1.8em', lg: '2em' },
       transition: 'all 0.5s ease',
+      flexGrow: 1,
     },
     icon: {
       width: { xs: '2.8em', lg: '4em' },

@@ -1,4 +1,10 @@
-import { Box, BoxProps, Container, Typography } from '@mui/material';
+import {
+  Box,
+  BoxProps,
+  Container,
+  Typography,
+  useMediaQuery,
+} from '@mui/material';
 import { AtlasStylesheet } from '@atlascode/frontend-helpers';
 import { OurServicesItem } from '@atlascode/frontend-components';
 import {
@@ -60,64 +66,71 @@ export function OurServicesDesktop({ sx, ...rest }: OurServicesDesktopProps) {
     setActiveItem(stateList);
   };
 
-  return (
-    <Box sx={styles.root} {...rest}>
-      <Container sx={styles.container} maxWidth="lg">
-        <Typography variant="h1" sx={styles.title}>
-          Nossos serviços
-        </Typography>
+  const isDesktop = useMediaQuery('@media(min-width: 1024px)');
 
-        <Box sx={styles.grid}>
-          <Box sx={styles.timeItemContainer}>
-            <OurServicesItem
-              active={activeItem[0]}
-              title="Desenvolvimento nativo"
-              fillTime={TRANSITION_TIME}
-              icon={CodeIcon}
-              onFillTimeEnd={callback}
-              onClick={() => handleClick(0)}
-            />
-            <OurServicesItem
-              active={activeItem[1]}
-              title="Branding"
-              fillTime={TRANSITION_TIME}
-              icon={BrandingIcon}
-              onFillTimeEnd={callback}
-              onClick={() => handleClick(1)}
-            />
-            <OurServicesItem
-              active={activeItem[2]}
-              title="Redes sociais"
-              fillTime={TRANSITION_TIME}
-              icon={SocialMediaIcon}
-              onFillTimeEnd={callback}
-              onClick={() => handleClick(2)}
-            />
-            <OurServicesItem
-              active={activeItem[3]}
-              fillTime={TRANSITION_TIME}
-              title="Anúncios"
-              icon={AdvertisementIcon}
-              onFillTimeEnd={callback}
-              onClick={() => handleClick(3)}
-            />
-          </Box>
-          <MotionBox sx={styles.contentContainer}>
-            <MotionBox
-              key={indexOf(activeItem, true)}
-              initial={{ opacity: 0, y: 150 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 1.5,
-              }}
-              sx={styles.content}
-            >
-              {CONTENT_LIST[indexOf(activeItem, true)]}
-            </MotionBox>
-          </MotionBox>
+  return (
+    // eslint-disable-next-line react/jsx-no-useless-fragment
+    <React.Fragment>
+      {isDesktop && (
+        <Box sx={styles.root} {...rest}>
+          <Container sx={styles.container} maxWidth="lg">
+            <Typography variant="h1" sx={styles.title}>
+              Nossos serviços
+            </Typography>
+
+            <Box sx={styles.grid}>
+              <Box sx={styles.timeItemContainer}>
+                <OurServicesItem
+                  active={activeItem[0]}
+                  title="Desenvolvimento nativo"
+                  fillTime={TRANSITION_TIME}
+                  icon={CodeIcon}
+                  onFillTimeEnd={callback}
+                  onClick={() => handleClick(0)}
+                />
+                <OurServicesItem
+                  active={activeItem[1]}
+                  title="Branding"
+                  fillTime={TRANSITION_TIME}
+                  icon={BrandingIcon}
+                  onFillTimeEnd={callback}
+                  onClick={() => handleClick(1)}
+                />
+                <OurServicesItem
+                  active={activeItem[2]}
+                  title="Redes sociais"
+                  fillTime={TRANSITION_TIME}
+                  icon={SocialMediaIcon}
+                  onFillTimeEnd={callback}
+                  onClick={() => handleClick(2)}
+                />
+                <OurServicesItem
+                  active={activeItem[3]}
+                  fillTime={TRANSITION_TIME}
+                  title="Anúncios"
+                  icon={AdvertisementIcon}
+                  onFillTimeEnd={callback}
+                  onClick={() => handleClick(3)}
+                />
+              </Box>
+              <MotionBox sx={styles.contentContainer}>
+                <MotionBox
+                  key={indexOf(activeItem, true)}
+                  initial={{ opacity: 0, y: 150 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 1.5,
+                  }}
+                  sx={styles.content}
+                >
+                  {CONTENT_LIST[indexOf(activeItem, true)]}
+                </MotionBox>
+              </MotionBox>
+            </Box>
+          </Container>
         </Box>
-      </Container>
-    </Box>
+      )}
+    </React.Fragment>
   );
 }
 

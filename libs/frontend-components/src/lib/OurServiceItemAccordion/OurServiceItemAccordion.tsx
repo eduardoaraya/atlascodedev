@@ -18,6 +18,7 @@ export function OurServiceItemAccordion({
   onFillTimeEnd,
   withChevron = true,
   icon,
+  title,
   content = 'Lorem ipsum',
   ...rest
 }: OurServiceItemAccordionProps) {
@@ -30,6 +31,7 @@ export function OurServiceItemAccordion({
           onFillTimeEnd={onFillTimeEnd}
           withChevron={withChevron}
           icon={icon}
+          title={title}
         />
         <MotionBox
           sx={styles.content}
@@ -73,5 +75,6 @@ const styles = AtlasStylesheet.create({
     width: '100%',
     color: (theme) => theme.palette.secondary.contrastText,
     fontSize: { xs: '1.6em' },
+    maxWidth: { xs: '32em', sm: '35ch' },
   },
 });
