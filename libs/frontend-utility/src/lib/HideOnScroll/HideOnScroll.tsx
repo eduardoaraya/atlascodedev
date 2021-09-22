@@ -1,4 +1,4 @@
-import { useScrollTrigger, Slide, Box } from '@mui/material';
+import { useScrollTrigger, Slide } from '@mui/material';
 
 /* eslint-disable-next-line */
 export interface HideOnScrollProps {
