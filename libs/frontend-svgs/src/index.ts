@@ -1,3 +1,4 @@
+export * from './lib/CloudSectionSVG/CloudSectionSVG';
 export * from './lib/GoogleCloudLogo/GoogleCloudLogo';
 export * from './lib/GoogleCloudLogo/GoogleCloudLogo';
 export * from './lib/AWSLogo/AWSLogo';

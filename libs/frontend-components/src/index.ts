@@ -1,3 +1,4 @@
+export * from './lib/OurServiceItemAccordion/OurServiceItemAccordion';
 export * from './lib/OurServicesItem/OurServicesItem';
 export * from './lib/AtlasLoader/AtlasLoader';
 export * from './lib/WhatsAppButton/WhatsAppButton';
