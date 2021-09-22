@@ -5,6 +5,7 @@ const titleStyle = (size: string): TypographyStyleOptions => ({
   fontSize: size,
   fontFamily: 'Nunito Sans, sans-serif',
   fontStyle: 'normal',
+  fontWeight: 900,
   color: '#323232',
 });
 
@@ -19,6 +20,7 @@ const typography: ThemeOptions['typography'] = {
   h6: titleStyle('12px'),
   body1: {
     color: '#757575',
+    fontSize: '1.2em',
   },
 };
 export default typography;
