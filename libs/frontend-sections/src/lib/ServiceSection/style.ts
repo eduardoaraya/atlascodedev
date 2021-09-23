@@ -1,4 +1,4 @@
-import { SxProps, Theme } from '@mui/system';
+import { SxProps, Theme } from '@material-ui/system';
 
 export const getDefaultStyle = (time = 1000) =>
   ({

@@ -1,5 +1,5 @@
 export interface NodeInterface<T> {
-  getElement(): T | null;
+  getElement(): T;
   setNext(element: NodeInterface<T>): void;
   getNext(): NodeInterface<T> | null;
 }
@@ -10,7 +10,7 @@ export default class Node<T> implements NodeInterface<T> {
     private next: NodeInterface<T> | null = null
   ) {}
 
-  getElement(): T | null {
+  getElement(): T {
     return this.element;
   }
 

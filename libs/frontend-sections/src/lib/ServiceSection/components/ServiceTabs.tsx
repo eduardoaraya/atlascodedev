@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Typography, Box } from '@mui/material';
 import { ServiceInterface } from '../contracts';
 import { LinkedListInterface } from '../utils/linkedList';
 import { NodeInterface } from '../utils/node';
