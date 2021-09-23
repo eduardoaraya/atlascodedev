@@ -1,4 +1,4 @@
-import { ServiceInterface } from './contracts';
+import { ServiceDataInterface } from './contracts';
 
 export default [
   {
@@ -37,4 +37,4 @@ export default [
       `O investimento em mídias pagas é de grande importância para alavancar ainda mais as suas vendas no mundo digital..`,
     ],
   },
-] as ServiceInterface[];
+] as ServiceDataInterface[];
