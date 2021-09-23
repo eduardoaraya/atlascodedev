@@ -6,6 +6,7 @@ import React from 'react';
 import AnimatedBurguerMenu, {
   KotaBurguerProps,
 } from '../AnimatedBurguerMenu/AnimatedBurguerMenu';
+import { useSmoothScrollOffset } from '@atlascode/frontend-smoothscroll';
 
 export type MenuItem = {
   action: (...args: unknown[]) => void;
