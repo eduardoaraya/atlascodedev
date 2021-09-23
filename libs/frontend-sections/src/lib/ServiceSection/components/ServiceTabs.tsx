@@ -24,7 +24,7 @@ export const ServiceTabs: React.FC<ServiceTabsProps> = ({
           <Box
             className={`tab-item ${isActiveClass(item?.getElement()?.id ?? 0)}`}
             key={key}
-            onClick={() => handleClick(item?.getNext())}
+            onClick={() => handleClick(item)}
           >
             {item?.getElement()?.icon && (
               <Box className="icon">{item?.getElement()?.icon()}</Box>
