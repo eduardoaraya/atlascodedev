@@ -63,7 +63,15 @@ export function AppLayout(props: AppLayoutProps) {
         style={{ position: 'absolute', top: 0, left: 0 }}
       ></div>
       <HideOnScroll>
-        <div style={{ position: 'fixed', top: 0, left: 0, width: '100%' }}>
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100%',
+            zIndex: 10,
+          }}
+        >
           <Header
             callToActionButton={{
               action: () => console.log('hello world'),
@@ -82,6 +90,15 @@ export function AppLayout(props: AppLayoutProps) {
           />
         </div>
       </HideOnScroll>
+      <Box
+        sx={{
+          height: '9em',
+          fontSize: '10px',
+          visibility: 'hidden',
+          opacity: 0,
+          width: '100%',
+        }}
+      />
       <ScrollBackTop />
       {props.children}
       <Box sx={styles.bgPattern} />
