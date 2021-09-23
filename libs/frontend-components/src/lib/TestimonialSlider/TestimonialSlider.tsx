@@ -1,4 +1,5 @@
 import React from 'react';
+// eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import { CircleIconButton } from '@atlascode/frontend-components';
 import { useMemoizedMergedObject } from '@atlascode/frontend-hooks';
 import { ArrowBack, ArrowForward } from '@mui/icons-material';

@@ -12,7 +12,7 @@ export const buttonOverride = (theme: Theme): Components['MuiButton'] => {
       contained: {
         fontWeight: 800,
         borderRadius: '50px',
-        padding: '1.4em 3em',
+        padding: '0.8em 2.8em',
       },
 
       outlinedPrimary: {

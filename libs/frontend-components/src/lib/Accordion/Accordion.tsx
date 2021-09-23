@@ -19,12 +19,12 @@ export function Accordion({ sx, content, title, ...rest }: AccordionProps) {
   return (
     <Box sx={defaultStylesMemo} {...rest}>
       <MotionBox className="AtlasCode-Accordion-root">
-        <Box className="header">
-          <Typography variant="caption" className="title">
+        <Box className="AtlasCode-Accordion-header">
+          <Typography variant="caption" className="AtlasCode-Accordion-title">
             {title}
           </Typography>
 
-          <Box className="chevron">
+          <Box className="AtlasCode-Accordion-chevron">
             <AccordionChevron
               onClick={() => setAccordionOpen((prevState) => !prevState)}
               open={accordionOpen}
@@ -75,27 +75,29 @@ const defaultStyles = () => {
       justifyContent: 'center',
       overflow: 'hidden',
 
-      '.header': {
+      '.AtlasCode-Accordion-header': {
         display: 'flex',
         width: '100%',
         alignItems: 'center',
         height: '100%',
         py: { xs: 1.2 },
+        px: { xs: 1 },
       },
 
-      '.title': {
+      '.AtlasCode-Accordion-title': {
         fontSize: { xs: '1.6em' },
         fontWeight: 800,
         color: (theme) => theme.palette.secondary.main,
         flexGrow: 1,
       },
 
-      '.chevron': {},
+      '.AtlasCode-Accordion-chevron': {},
 
       '.content': {
         width: '100%',
         fontSize: { xs: '1.8em' },
         fontWeight: 700,
+        px: { xs: 2 },
       },
     },
   } as SxProps<Theme>;
